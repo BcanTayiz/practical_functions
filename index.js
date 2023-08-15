@@ -18,5 +18,6 @@ module.exports = {
     hasKeyInObjectsList:compare.hasKeyInObjectsList,
     valueEmpty:compare.valueEmpty,
     deepClone:deepClone.deepClone,
-    transformBoolean:transform.transformBoolean
+    transformBoolean:transform.transformBoolean,
+    dateToString:transform.dateToString,
 };
