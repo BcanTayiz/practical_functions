@@ -1,0 +1,26 @@
+{
+  "name": "easyway",
+  "version": "1.0.0",
+  "description": "Make your javascript functions faster and use benefits of clumsy package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BcanTayiz/clumsy.git"
+  },
+  "keywords": [
+    "simple",
+    "loop",
+    "function",
+    "list",
+    "filter"
+  ],
+  "author": "Iz Apps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BcanTayiz/clumsy/issues"
+  },
+  "homepage": "https://github.com/BcanTayiz/clumsy#readme"
+}
