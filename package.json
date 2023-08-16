@@ -1,28 +1,34 @@
 {
-  "name": "practicale_js",
+  "name": "practical_js",
   "version": "1.0.1",
-  "description": "Make your javascript functions faster and use benefits of practicale_js package",
+  "description": "Make your javascript functions faster and use benefits of practical_js package",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BcanTayiz/practicale_js.git"
+    "url": "git+https://github.com/BcanTayiz/practical_js.git"
   },
   "keywords": [
     "simple",
     "loop",
     "function",
     "list",
-    "filter"
+    "filter",
+    "practical",
+    "daily",
+    "usability",
+    "array",
+    "object",
+    "manuplation"
   ],
   "author": "Iz Apps",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BcanTayiz/practicale_js/issues"
+    "url": "https://github.com/BcanTayiz/practical_js/issues"
   },
-  "homepage": "https://github.com/BcanTayiz/practicale_js#readme",
+  "homepage": "https://github.com/BcanTayiz/practical_js#readme",
   "dependencies": {
     "fs": "^0.0.1-security"
   },
