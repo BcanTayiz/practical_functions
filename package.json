@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BcanTayiz/practicale_js.git"
+    "url": "git+https://github.com/BcanTayiz/practical_functions.git"
   },
   "keywords": [
     "simple",
@@ -23,9 +23,9 @@
   "author": "Iz Apps",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BcanTayiz/practicale_js/issues"
+    "url": "https://github.com/BcanTayiz/practical_functions/issues"
   },
-  "homepage": "https://github.com/BcanTayiz/practicale_js#readme",
+  "homepage": "https://github.com/BcanTayiz/practical_functions#readme",
   "dependencies": {
     "fs": "^0.0.1-security"
   },
