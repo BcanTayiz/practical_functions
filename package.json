@@ -1,6 +1,6 @@
 {
   "name": "practicale_js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Make your javascript functions faster and use benefits of practicale_js package",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
   },
   "peerDependencies": {
     "react": "^16.0.0",
-    "vue":"^2.0.0"
+    "vue": "^2.0.0"
   }
 }
