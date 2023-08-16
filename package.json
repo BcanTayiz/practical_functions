@@ -1,14 +1,14 @@
 {
-  "name": "easyway",
+  "name": "practicale_js",
   "version": "1.0.0",
-  "description": "Make your javascript functions faster and use benefits of clumsy package",
+  "description": "Make your javascript functions faster and use benefits of practicale_js package",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BcanTayiz/clumsy.git"
+    "url": "git+https://github.com/BcanTayiz/practicale_js.git"
   },
   "keywords": [
     "simple",
@@ -20,9 +20,9 @@
   "author": "Iz Apps",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BcanTayiz/clumsy/issues"
+    "url": "https://github.com/BcanTayiz/practicale_js/issues"
   },
-  "homepage": "https://github.com/BcanTayiz/clumsy#readme",
+  "homepage": "https://github.com/BcanTayiz/practicale_js#readme",
   "dependencies": {
     "fs": "^0.0.1-security"
   },
