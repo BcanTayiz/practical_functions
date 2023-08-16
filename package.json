@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/BcanTayiz/clumsy/issues"
   },
-  "homepage": "https://github.com/BcanTayiz/clumsy#readme"
+  "homepage": "https://github.com/BcanTayiz/clumsy#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "vue":"^2.0.0"
+  }
 }

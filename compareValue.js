@@ -29,9 +29,44 @@ function empty(e) {
         return false;
     }
 }
+
+function multipleConditions(array1,array2){
+    if(!Array.isArray(array1) || !Array.isArray(array2) ){
+        throw Error('Values must be type of array')
+    }
+    let cond = true
+    for(let i=0;i<array1.length;i++){
+        if(array1.length > array2.length){
+            if(i > array2.length -1){
+                break
+            }
+           
+        }else{
+            if(i > array1.length -1){
+                break
+            }
+        }
+
+        if(array1[i] != array2[i]){
+            cond = false
+        }
+        
+    }
+
+    return cond
+}
+
+function getType(val){
+    return typeof(val)
+}
+
+
+
   
 module.exports = {
     objectSort:objectSort,
     hasKeyInObjectsList:hasKeyInObjectsList,
-    valueEmpty:empty
+    valueEmpty:empty,
+    multipleConditions:multipleConditions,
+    getType:getType,
 };

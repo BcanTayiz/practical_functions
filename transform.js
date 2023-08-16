@@ -4,7 +4,9 @@ function transformBoolean(val){
 }
 
 function dateToString(dateVal, country_code, format, separator, values = 'number') {
-    const validFormats = ['weekday', 'year', 'month', 'day', 'hour', 'minute', 'second', 'timeZone'];
+    
+    try{
+        const validFormats = ['weekday', 'year', 'month', 'day', 'hour', 'minute', 'second', 'timeZone'];
     const filteredFormat = format.split('-').filter(item => validFormats.includes(item)).join('-');
 
     const options = {
@@ -33,13 +35,56 @@ function dateToString(dateVal, country_code, format, separator, values = 'number
     }
 
     return formattedDate.replace(/ /g, separator);
+    }catch(error){
+        throw Error(error)
+    }
+    
 }
 
 
+function convertToMultilineHTML(inputString, wordCount) {
+    const words = inputString.split(' ');
+
+    let lines = [];
+    let currentLine = '';
+    words.forEach(word => {
+        if (currentLine.split(' ').length < wordCount) {
+            currentLine += (currentLine.length === 0 ? '' : ' ') + word;
+        } else {
+            lines.push(currentLine);
+            currentLine = word;
+        }
+    });
+    
+    if (currentLine.length > 0) {
+        lines.push(currentLine);
+    }
+
+    const multiLineHTML = lines.join('\n');
+
+    return multiLineHTML;
+}
+
+
+function prettifierJson(jsonObj) {
+    try {
+        const jsonString = JSON.stringify(jsonObj, null, 2); // null ve 2, pretty printing için gereken ayarlar
+        return jsonString;
+    } catch (error) {
+        return 'Invalid JSON';
+    }
+}
+
+function numberWithCommas(number,seperator=',') {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, seperator);
+}
 
 
 
 module.exports = {
     transformBoolean:transformBoolean,
-    dateToString:dateToString
+    dateToString:dateToString,
+    convertToMultilineHTML:convertToMultilineHTML,
+    prettifierJson:prettifierJson,
+    numberWithCommas:numberWithCommas
 };

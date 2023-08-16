@@ -45,9 +45,59 @@ function modulerCheck(array,value){
 }
 
 
+function checkArray(array){
+    return Array.isArray(array)
+}
+
+function objectLength(obj){
+    if(typeof obj != 'object'){
+        throw Error('Variable is not an object')
+    }
+    return Object.keys(obj).length
+}
+
+
+function checkDates(date1,date2){
+    if(date1 instanceof Date && date2 instanceof Date ){
+        return date1.getTime() == date2.getTime()
+    }else{
+        throw Error('Values should be instance of Date')
+    }
+}
+
+function isValidDate(d) {
+    return d instanceof Date && !isNaN(d);
+  }
+
+function isNumeric(n,returnValue=false) {
+    if(typeof(n) == 'string')
+    {
+        try{
+            n = parseInt(numericString); // Converts to integer
+        }catch{
+
+        }
+        try{
+            n = parseFloat(decimalString); // Converts to floating-point
+        }catch{
+
+        }
+    }
+    if(returnValue && !isNaN(parseFloat(n)) && isFinite(n)){
+        return n
+    }
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+
 
 
 module.exports = {
     checkValue: checkValue,
-    modulerCheck: modulerCheck
+    modulerCheck: modulerCheck,
+    checkArray:checkArray,
+    objectLength:objectLength,
+    checkDates:checkDates,
+    isNumeric:isNumeric,
+    isValidDate:isValidDate
 };

@@ -4,7 +4,6 @@ function deleteValues(object,value){
             return object.filter(item1 => !value.includes(item1));
         }else{
            let newArray = array.filter(item => item != value)
-           console.log(newArray)
            return newArray
         }
         
@@ -27,7 +26,6 @@ function deleteValues(object,value){
         }
     }
     
-    console.log('OTHER')
     
 }
 
