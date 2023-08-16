@@ -30,6 +30,7 @@ module.exports = {
     compareLists:filter.compareLists,
     substring: stringCompare.substring,
     deleteValues: deleteValues.deleteValues,
+    removeDuplicatesByKey:deleteValues.removeDuplicatesByKey,
     simpleValidateEmail: simpleValidateEmail.simpleValidateEmail,
     createRandomUuid4: createRandomUuid4.createRandomUuid4,
     objectSort:compare.objectSort,
