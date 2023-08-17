@@ -17,6 +17,14 @@ const reduceList = require('./reduceList')
 const stringManuplation = require('./stringManuplation')
 const arrayManuplation = require('./arrayManuplation')
 const maxMin = require('./minMax')
+const mathFormula = require('./mathFormula')
+const recursiveMath = require('./recursive')
+const duplicate = require('./duplicate')
+const palindrome = require('./isPalindrome')
+const sorting = require('./sorting')
+const regularNumbers = require('./regularNumber')
+const profit = require('./profit')
+const stringSearch = require('./stringSearch')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -55,8 +63,20 @@ module.exports = {
     alterObjectValues:changeObjects.alterObjectValues,
     listReducer : reduceList.listReducer,
     replaceAt:stringManuplation.replaceAt,
+    filterStringsByTerm:stringSearch.filterStringsByTerm,
     swapArrayElements:arrayManuplation.swapArrayElements,
-    findMaxMin:maxMin.findMaxMin
+    findMaxMin:maxMin.findMaxMin,
+    findMatchingCombinations:mathFormula.findMatchingCombinations,
+    recursiveMathOperation:recursiveMath.recursiveMathOperation,
+    findDuplicate:duplicate.findDuplicate,
+    findDuplicateElements:duplicate.findDuplicateElements,
+    isPalindrome:palindrome.isPalindrome,
+    externalMergeSort:sorting.externalMergeSort,
+    nPartitions:sorting.nPartitions,
+    generateRegularNumbers:regularNumbers.generateRegularNumbers,
+    maxProfit:profit.maxProfit,
+    maxProfitDetails:profit.maxProfitDetails,
+    summarizeDecisions:profit.summarizeDecisions
 };
 
 
