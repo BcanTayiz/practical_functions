@@ -28,10 +28,6 @@ const object = {
     hobbies: ['reading', 'swimming']
 };
 
-console.log(checkValue(array, 3)); // true
-console.log(checkValue(array, 6)); // false
-console.log(checkValue(object, 'John')); // true
-console.log(checkValue(object, 'Alice')); // false
 
 
 function modulerCheck(array,value){

@@ -44,10 +44,6 @@ function shuffleArrayRandom(array) {
     return shuffledArray.slice(0, count);
 }
 
-const originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const randomItems = getRandomItemsFromArray(originalArray, 3);
-
-console.log(randomItems);
 
 
 module.exports = {

@@ -21,7 +21,7 @@ function createRandomUuid4() {
     return `${timeLow}-${timeMid}-${timeHiAndVersion}-${clockSeqAndReserved}-${node}`;
 }
 
-console.log(createRandomUuid4());
+
 
 module.exports = {
     createRandomUuid4:createRandomUuid4

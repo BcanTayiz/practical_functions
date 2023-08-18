@@ -25,6 +25,14 @@ const sorting = require('./sorting')
 const regularNumbers = require('./regularNumber')
 const profit = require('./profit')
 const stringSearch = require('./stringSearch')
+const mathPractical = require('./mathPractical')
+const cssFilter = require('./cssFilter')
+const date = require('./date')
+const scale = require('./scale')
+const generateRect = require('./generateRect')
+const normalize = require('./normalize')
+const dividers = require('./dividers')
+const convertMemory = require('./convertMemory')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -76,7 +84,34 @@ module.exports = {
     generateRegularNumbers:regularNumbers.generateRegularNumbers,
     maxProfit:profit.maxProfit,
     maxProfitDetails:profit.maxProfitDetails,
-    summarizeDecisions:profit.summarizeDecisions
+    summarizeDecisions:profit.summarizeDecisions,
+    calculatePi:mathPractical.calculatePi,
+    calculateArea:mathPractical.calculateArea,
+    calculateEulerNum:mathPractical.calculateEulerNum,
+    calculateTriFieldAngle:mathPractical.calculateTriFieldAngle,
+    removeZeros:mathPractical.removeZeros,
+    logBase:mathPractical.logBase,
+    roundX:mathPractical.roundX,
+    customPad:mathPractical.customPad,
+    toDegrees:mathPractical.toDegrees,
+    toRadians:mathPractical.toRadians,
+    makePercentage:mathPractical.makePercentage,
+    parseFormula:mathPractical.parseFormula,
+    modifyValues:mathPractical.modifyValues,
+    getIndividualDigits:mathPractical.getIndividualDigits,
+    sumAndFixDecimal:mathPractical.sumAndFixDecimal,
+    gcd:mathPractical.gcd,
+    divEqParts:mathPractical.divEqParts,
+    genRandPointCircle:mathPractical.genRandPointCircle,
+    findLCMOfArray:mathPractical.findLCMOfArray,
+    getRecolorFilter:cssFilter.getRecolorFilter,
+    getMixColor:cssFilter.getMixColor,
+    getDateOfWeek:date.getDateOfWeek,
+    calculateYScaleMax:scale.calculateYScaleMax,
+    genNonOverLapRect:generateRect.genNonOverLapRect,
+    normalizeList:normalize.normalizeList,
+    findNDividers:dividers.findNDividers,
+    convertMemory:convertMemory.convertMemory
 };
 
 
