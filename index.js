@@ -33,6 +33,11 @@ const generateRect = require('./generateRect')
 const normalize = require('./normalize')
 const dividers = require('./dividers')
 const convertMemory = require('./convertMemory')
+const changeFolder = require('./changeFolder')
+const generateString = require('./stringGenerate')
+const compress = require('./compression')
+const calculateEntropy = require('./calculateEntropy')
+const mathOperations = require('./mathOperations')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -104,6 +109,10 @@ module.exports = {
     divEqParts:mathPractical.divEqParts,
     genRandPointCircle:mathPractical.genRandPointCircle,
     findLCMOfArray:mathPractical.findLCMOfArray,
+    performArrayOperation:mathOperations.performArrayOperation,
+    polygonArea:mathOperations.polygonArea,
+    moduleNegative:mathOperations.moduleNegative,
+    findRoot:mathOperations.findRoot,
     getRecolorFilter:cssFilter.getRecolorFilter,
     getMixColor:cssFilter.getMixColor,
     getDateOfWeek:date.getDateOfWeek,
@@ -111,7 +120,12 @@ module.exports = {
     genNonOverLapRect:generateRect.genNonOverLapRect,
     normalizeList:normalize.normalizeList,
     findNDividers:dividers.findNDividers,
-    convertMemory:convertMemory.convertMemory
+    convertMemory:convertMemory.convertMemory,
+    changeFileExtension:changeFolder.changeFileExtension,
+    generateRandomString:generateString.generateRandomString,
+    customCompress:compress.customCompress,
+    customDecompress:compress.customDecompress,
+    calculateEntropy:calculateEntropy.calculateEntropy
 };
 
 

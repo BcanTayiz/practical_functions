@@ -1,11 +1,16 @@
 ﻿# Practicle Js
 
+## Usability
+
+* If you ever stack and get lazier at some point,
+* When you try something and bugged at some problem,
+* While you want to focus something besides functionality,
+* This project supports you while you can consider other problems,
+
 ![Travis Status](https://img.shields.io/travis/:BcanTayiz/:practical_functions)
 ![NPM Downloads](https://img.shields.io/npm/dw/:practical_functions)
 ![NPM License](https://img.shields.io/npm/l/:practical_functions)
 [![Twitter](https://img.shields.io/twitter/follow/:iz_apps.svg?style=social&label=@:iz_apps)](https://twitter.com/:iz_apps)
-
-# Usage of Functions
 
 ## Labels
 - simple
@@ -16,6 +21,10 @@
 - usability
 - array
 - object
+
+# Usage of Functions
+
+
 
 ```js live=true
 let list = [1,2,3,4,5,6]
@@ -460,6 +469,51 @@ console.log(convertedValue2 + ' ' + unitConvert2);
 const numberArray = [12, 18, 24];
 const lcm = pf.findLCMOfArray(numberArray);
 console.log("LCM of", numberArray, "is", lcm);
+```
+
+## Example 3
+
+```js live=true
+// Define the root directory to start searching from
+const rootDirectory = __dirname;
+
+// Define the file extension to change from and to
+const fromExtension = '.new';
+const toExtension = '.txt';
+
+// Start the process from the root directory
+pf.changeFileExtension(rootDirectory,fromExtension,toExtension);
+
+console.log('File extensions changed successfully!');
+
+// Example usage
+const originalString = 'This is a test string for compression.';
+const compressedString = pf.customCompress(originalString);
+const decompressedString = pf.customDecompress(compressedString);
+
+console.log('Original:', originalString);
+console.log('Compressed:', compressedString);
+console.log('Decompressed:', decompressedString);
+
+
+// Example usage
+const originalString2 = pf.generateRandomString(500)
+const compressedString2 = pf.customCompress(originalString);
+const decompressedString2 = pf.customDecompress(compressedString);
+
+console.log('Original:', originalString2);
+console.log('Compressed:', compressedString2);
+console.log('Decompressed:', decompressedString2);
+
+// Example usage:
+const sequence = "101001001";
+const entropy = pf.calculateEntropy(sequence);
+console.log(`Entropy of "${sequence}": ${entropy}`);
+
+const sequence2 = pf.generateRandomString(100)
+const entropy2 = pf.calculateEntropy(sequence2);
+console.log(`Entropy of "${sequence2}": ${entropy2}`);
+
 ```
 
 

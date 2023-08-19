@@ -28,7 +28,10 @@
   "homepage": "https://github.com/BcanTayiz/practical_functions#readme",
   "dependencies": {
     "decimal.js": "^10.4.3",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "pako": "^2.1.0",
+    "path": "^0.12.7",
+    "text-encoding": "^0.7.0"
   },
   "peerDependencies": {
     "react": "^16.0.0",
