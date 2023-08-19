@@ -1,7 +1,7 @@
 const checkValue = require('./checkValue');
 const stringCompare = require('./stringCompare')
 const deleteValues = require('./deleteValues')
-const simpleValidateEmail = require('./validateEmail')
+const validateEmail = require('./validateEmail')
 const createRandomUuid4 = require('./uuidCreate')
 const compare = require('./compareValue')
 const deepClone = require('./cloneObject')
@@ -52,7 +52,7 @@ module.exports = {
     substring: stringCompare.substring,
     deleteValues: deleteValues.deleteValues,
     removeDuplicatesByKey:deleteValues.removeDuplicatesByKey,
-    simpleValidateEmail: simpleValidateEmail.simpleValidateEmail,
+    validateEmail: validateEmail.validateEmail,
     createRandomUuid4: createRandomUuid4.createRandomUuid4,
     objectSort:compare.objectSort,
     hasKeyInObjectsList:compare.hasKeyInObjectsList,
