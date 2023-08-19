@@ -1,5 +1,10 @@
 ﻿# Practicle Js
 
+![Travis Status](https://img.shields.io/travis/:BcanTayiz/:practical_functions)
+![NPM Downloads](https://img.shields.io/npm/dw/:practical_functions)
+![NPM License](https://img.shields.io/npm/l/:practical_functions)
+[![Twitter](https://img.shields.io/twitter/follow/:iz_apps.svg?style=social&label=@:iz_apps)](https://twitter.com/:iz_apps)
+
 # Usage of Functions
 
 ## Labels
