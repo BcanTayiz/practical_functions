@@ -2,20 +2,15 @@
 
 # Usage of Functions
 
----
-displayName: CoderMaker
-description: Clean and useful, extensive functions for javascript
-labels: [
-    "simple",
-    "loop",
-    "function",
-    "list",
-    "filter",
-    "usability",
-    "array",
-    "object"
-  ],
----
+## Labels
+- simple
+- loop
+- function
+- list
+- filter
+- usability
+- array
+- object
 
 ```js live=true
 let list = [1,2,3,4,5,6]
