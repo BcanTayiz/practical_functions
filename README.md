@@ -514,6 +514,43 @@ const sequence2 = pf.generateRandomString(100)
 const entropy2 = pf.calculateEntropy(sequence2);
 console.log(`Entropy of "${sequence2}": ${entropy2}`);
 
+
+// Example usage:
+const array1 = [1, 2, 3];
+const array2 = [1, 2, 3, 4, 5];
+
+const multiplicationResult = pf.performArrayOperation(array1, array2, "multiply");
+console.log("Multiplication Result:", multiplicationResult);
+
+const additionResult =  pf.performArrayOperation(array1, array2, "add");
+console.log("Addition Result:", additionResult);
+
+const subtractionResult =  pf.performArrayOperation(array1, array2, "subtract");
+console.log("Subtraction Result:", subtractionResult);
+
+const divisionResult =  pf.performArrayOperation(array1, array2, "divide");
+console.log("Division Result:", divisionResult);
+
+
+// Example usage:
+const polygonVertices = [
+    { x: 0, y: 0 },
+    { x: 4, y: 0 },
+    { x: 4, y: 3 },
+    { x: 0, y: 3 }
+];
+
+const area = pf.polygonArea(polygonVertices);
+console.log("Polygon Area:", area);
+
+// Example usage:
+const coefficients = [1, -3, 2]; // Represents the polynomial x^2 - 3x + 2 = 0
+const initialGuess = 2;
+const root = pf.findRoot(coefficients, initialGuess);
+
+console.log(`Root found at x = ${root}`);
+
+
 ```
 
 
