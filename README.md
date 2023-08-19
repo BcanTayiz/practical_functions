@@ -27,6 +27,8 @@
 
 
 ```js live=true
+const pf = require('practical-functions')
+
 let list = [1,2,3,4,5,6]
 let object = {'a':1,'b':2,'c':3}
 const objectsList = [
@@ -51,7 +53,12 @@ console.log(pf.modulerCheck(list,[1,2,3]))
 console.log(pf.deleteValues(list,[1,2,3]))
 console.log(pf.deleteValues(object,['a','b']))
 
-console.log(pf.simpleValidateEmail('asdasd@index.com'))
+console.log(pf.validateEmail('asdasd@index.com'),'EMAİL VALIDATE')
+console.log(pf.validateEmail('asdasd@gmail.com'),'EMAİL VALIDATE')
+console.log(pf.validateEmail('asdasd@.com'),'EMAİL VALIDATE')
+console.log(pf.validateEmail('asdasd@yandex.com'),'EMAİL VALIDATE')
+
+
 console.log(pf.createRandomUuid4())
 console.log(pf.objectSort(objectsList,'age'))
 console.log(pf.hasKeyInObjectsList(objectsList,'name'))
@@ -292,7 +299,6 @@ try {
 } catch (error) {
     console.error("Error:", error.message);
 }
-
 
 ```
 
