@@ -1,6 +1,6 @@
 {
   "name": "practical-functions",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Make your javascript functions faster and use benefits of practical_functions package",
   "main": "index.js",
   "scripts": {
