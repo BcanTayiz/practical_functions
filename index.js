@@ -38,6 +38,11 @@ const generateString = require('./stringGenerate')
 const compress = require('./compression')
 const calculateEntropy = require('./calculateEntropy')
 const mathOperations = require('./mathOperations')
+const measureError = require('./measureError')
+const matrix = require('./matrix')
+const correlation = require('./correlation')
+const randomData = require('./randomData')
+const stringMatch = require('./textMatch')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -72,6 +77,7 @@ module.exports = {
     randomRange:randomGen.randomRange,
     shuffleArrayRandom:randomGen.shuffleArrayRandom,
     getRandomItemsFromArray:randomGen.getRandomItemsFromArray,
+    createRandomList:randomGen.createRandomList,
     getNumbers:generateNumbers.getNumbers,
     alterObjectValues:changeObjects.alterObjectValues,
     listReducer : reduceList.listReducer,
@@ -113,6 +119,14 @@ module.exports = {
     polygonArea:mathOperations.polygonArea,
     moduleNegative:mathOperations.moduleNegative,
     findRoot:mathOperations.findRoot,
+    createMatrixFromArray:matrix.createMatrixFromArray,
+    prettyPrintMatrix:matrix.prettyPrintMatrix,
+    createTableFromMatrix:matrix.createTableFromMatrix,
+    addMatrices:matrix.addMatrices,
+    subtractMatrices:matrix.subtractMatrices,
+    multiplyMatrices:matrix.multiplyMatrices,
+    transposeMatrix:matrix.transposeMatrix,
+    calculateCorrelationMatrix:correlation.calculateCorrelationMatrix,
     getRecolorFilter:cssFilter.getRecolorFilter,
     getMixColor:cssFilter.getMixColor,
     getDateOfWeek:date.getDateOfWeek,
@@ -125,7 +139,27 @@ module.exports = {
     generateRandomString:generateString.generateRandomString,
     customCompress:compress.customCompress,
     customDecompress:compress.customDecompress,
-    calculateEntropy:calculateEntropy.calculateEntropy
+    calculateEntropy:calculateEntropy.calculateEntropy,
+    meanSquaredError:measureError.meanSquaredError,
+    rootMeanSquaredError:measureError.rootMeanSquaredError,
+    relativeSquaredError:measureError.relativeSquaredError,
+    meanAbsoluteError:measureError.meanAbsoluteError,
+    coefficientOfDetermination:measureError.coefficientOfDetermination,
+    meanAbsolutePercentageError:measureError.meanAbsolutePercentageError,
+    meanPercentageError:measureError.meanPercentageError,
+    meanBiasDeviation:measureError.meanBiasDeviation,
+    confusionMatrix:measureError.confusionMatrix,
+    genRanUserList:randomData.genRanUserList,
+    genRandProductList:randomData.genRandProductList,
+    genRandEmailList:randomData.genRandEmailList,
+    genRandomOrder:randomData.genRandomOrder,
+    genRandomEvent:randomData.genRandomEvent,
+    genRandUserObjList:randomData.genRandUserObjList,
+    genRandEventObjList:randomData.genRandEventObjList,
+    genRandDateObjList:randomData.genRandDateObjList,
+    genRandEmailObjList:randomData.genRandEmailObjList,
+    findMostSimilarText:stringMatch.findMostSimilarText,
+    findMostSimDetailed:stringMatch.findMostSimDetailed
 };
 
 

@@ -44,10 +44,21 @@ function shuffleArrayRandom(array) {
     return shuffledArray.slice(0, count);
 }
 
+function createRandomList(length, min, max) {
+    const randomList = [];
+    for (let i = 0; i < length; i++) {
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        randomList.push(randomNumber);
+    }
+    return randomList;
+}
+
+
 
 
 module.exports = {
     randomRange: randomRange,
     shuffleArrayRandom:shuffleArrayRandom,
-    getRandomItemsFromArray,getRandomItemsFromArray
+    getRandomItemsFromArray:getRandomItemsFromArray,
+    createRandomList:createRandomList
 };
