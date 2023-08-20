@@ -812,6 +812,9 @@ const fastestFunction = pf.findFastFunc(functionsToTest, testData);
 console.log('Fastest and robust function:', fastestFunction.name);
 
 
+let all_list = pf.combineAndFlattenLists([pf.genRanUserList(3),pf.genRandEmailList(3),pf.genRandDateObjList(3),pf.genRandEventObjList(3)])
+console.log(all_list)
+
 ```
 
 
