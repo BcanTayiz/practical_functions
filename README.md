@@ -1,4 +1,4 @@
-﻿# Practicle Js
+﻿# Practical Javascript
 
 ## Usability
 
@@ -718,6 +718,98 @@ const result2 = pf.findMostSimDetailed(baseText2, textDocument2, nSentencesBefor
 
 console.log('Most Similar Text with Context:');
 console.log(result2);
+
+
+```
+
+# Example 5
+
+```js live=true
+const informalSentences = [
+    "Hey, can you give me a hand with this?",
+    "I wanna go to the movies tonight.",
+    "What's up? Got any plans for the weekend?",
+    "Let's grab some lunch!",
+    "It's gonna be awesome!",
+    "I gotta finish this report by tomorrow.",
+    "Can't make it to the meeting, sorry.",
+    "I'll hit you up later."
+];
+
+const formalSentences = [
+    "Hello, could you please assist me with this?",
+    "I would like to attend the cinema this evening.",
+    "How are you? Do you have any plans for the upcoming weekend?",
+    "Would you like to join me for a midday meal?",
+    "It will be quite impressive.",
+    "I must complete this report by tomorrow.",
+    "I regret to inform you that I won't be able to attend the meeting.",
+    "I will contact you later."
+];
+
+// Example usage:
+for (let i = 0; i < informalSentences.length; i++) {
+    console.log("Informal: " + pf.detectNaiveInformality(informalSentences[i]))
+    console.log("Formal: " + pf.detectNaiveInformality(formalSentences[i]))
+    console.log("\n");
+}
+
+// Test cases, works better
+console.log(pf.detectNaiveInformality("I am writing to express my sincere gratitude."));
+console.log(pf.detectNaiveInformality("Hello, how are you today?"));
+console.log(pf.detectNaiveInformality("Best regards,"));
+
+console.log(pf.detectNaiveInformality("Hey, what's up?"));
+console.log(pf.detectNaiveInformality("I wanna go to the movies tonight."));
+console.log(pf.detectNaiveInformality("LOL, that's hilarious!"));
+
+// Test case 1: Text contains an informal word
+const text1 = "Hey, what's up? Wanna grab some lunch?";
+console.log(pf.detectNaiveInformality(text1),'TRUE'); // true
+
+// Test case 2: Text is formal and does not contain informal words
+const text2 = "Dear Sir, I am writing to inquire about your services.";
+console.log(pf.detectNaiveInformality(text2),'FALSE'); // false
+
+// Test case 3: Text contains an informal word within a longer word
+const text3 = "The word 'hell' is often used informally.";
+console.log(pf.detectNaiveInformality(text3),'FALSE'); // false
+
+// Test case 4: Text is empty
+const text4 = "";
+console.log(pf.detectNaiveInformality(text4),'FALSE'); // false
+
+// Test case 5: Text contains multiple informal words
+const text5 = "Hi there! What's up? Wanna hang out after work?";
+console.log(pf.detectNaiveInformality(text5),'TRUE'); // true
+
+// Test case 6: Text contains formal words only
+const text6 = "I respectfully submit my application for your consideration.";
+console.log(pf.detectNaiveInformality(text6),'FALSE'); // false
+
+// Test Data: Array of numbers
+const testData = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+
+// Function 1: Find the sum of all numbers in the array
+function sumArray(arr) {
+    return arr.reduce((acc, num) => acc + num, 0);
+}
+
+// Function 2: Find the maximum number in the array
+function maxArray(arr) {
+    return Math.max(...arr);
+}
+
+// Function 3: Calculate the average of all numbers in the array
+function averageArray(arr) {
+    const sum = sumArray(arr);
+    return sum / arr.length;
+}
+
+const functionsToTest = [sumArray, maxArray, averageArray];
+
+const fastestFunction = pf.findFastFunc(functionsToTest, testData);
+console.log('Fastest and robust function:', fastestFunction.name);
 
 
 ```

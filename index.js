@@ -43,6 +43,8 @@ const matrix = require('./matrix')
 const correlation = require('./correlation')
 const randomData = require('./randomData')
 const stringMatch = require('./textMatch')
+const stringInformal = require('./stringInformal')
+const benchmark = require('./benchmark')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -72,6 +74,7 @@ module.exports = {
     prettifierJson: transform.prettifierJson,
     mergeObjects:aggregate.mergeObjects,
     createObjectFromLists:aggregate.createObjectFromLists,
+    combineAndFlattenLists:aggregate.combineAndFlattenLists,
     fileToArray:fileToArray.filesToArray,
     makeid:idCreate.makeid,
     randomRange:randomGen.randomRange,
@@ -159,7 +162,9 @@ module.exports = {
     genRandDateObjList:randomData.genRandDateObjList,
     genRandEmailObjList:randomData.genRandEmailObjList,
     findMostSimilarText:stringMatch.findMostSimilarText,
-    findMostSimDetailed:stringMatch.findMostSimDetailed
+    findMostSimDetailed:stringMatch.findMostSimDetailed,
+    detectNaiveInformality:stringInformal.detectNaiveInformality,
+    findFastFunc:benchmark.findFastFunc
 };
 
 

@@ -33,8 +33,16 @@ function createObjectFromLists(array1,array2){
     return obj
 }
 
+function combineAndFlattenLists(...lists) {
+    const combinedList = [].concat(...lists); // Combine all lists into one
+    const uniqueList = [...new Set([].concat(...combinedList))]; // Remove duplicates using Set
+    
+    return uniqueList;
+  }
+
 
 module.exports = {
     mergeObjects:mergeObjects,
-    createObjectFromLists:createObjectFromLists
+    createObjectFromLists:createObjectFromLists,
+    combineAndFlattenLists:combineAndFlattenLists
 };
