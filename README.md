@@ -903,45 +903,23 @@ console.log(`${temperatureInCelsius} degrees Celsius is equal to ${temperatureIn
 
 // Add more examples for other measurement types as needed.
 
-// Example usage:
-const n = 1000;
+// Example usage with custom parameters:
+const nNumber = 1000;
 
-const uniformNumbers = pf.generateUniformDistribution(n);
-const normalNumbers = pf.generateNormalDistribution(n);
-const exponentialNumbers = pf.generateExponentialDistribution(n, 0.5);
+const customUniformNumbers = pf.generateUniformDistribution(nNumber, 5, 15); // Between 5 and 15
+const customNormalNumbers = pf.generateNormalDistribution(nNumber, 10, 2); // Mean = 10, Std Deviation = 2
+const customExponentialNumbers = pf.generateExponentialDistribution(nNumber, 0.7); // Lambda = 0.7
+const customPoissonNumbers = pf.generatePoissonDistribution(nNumber, 3); // Lambda = 3
+const customBinomialNumbers = pf.generateBinomialDistribution(nNumber, 0.3); // n = 10, p = 0.3
+const customGeometricNumbers = pf.generateGeometricDistribution(nNumber, 0.1); // p = 0.1
 
-const uniformMean = pf.calculateMean(uniformNumbers);
-const uniformStdDev = pf.calculateStandardDeviation(uniformNumbers);
+console.log(customUniformNumbers,'Uniform')
+console.log(customNormalNumbers,'Normal')
+console.log(customExponentialNumbers,'Exponential')
+console.log(customPoissonNumbers,'Poisson')
+console.log(customBinomialNumbers,'Uniform')
+console.log(customGeometricNumbers,'Geometric')
 
-const normalMean = pf.calculateMean(normalNumbers);
-const normalStdDev = pf.calculateStandardDeviation(normalNumbers);
-
-const exponentialMean = pf.calculateMean(exponentialNumbers);
-const exponentialStdDev = pf.calculateStandardDeviation(exponentialNumbers);
-
-console.log('Uniform Distribution:');
-console.log(`Mean: ${uniformMean}`);
-console.log(`Standard Deviation: ${uniformStdDev}`);
-
-console.log('Normal Distribution:');
-console.log(`Mean: ${normalMean}`);
-console.log(`Standard Deviation: ${normalStdDev}`);
-
-console.log('Exponential Distribution:');
-console.log(`Mean: ${exponentialMean}`);
-console.log(`Standard Deviation: ${exponentialStdDev}`);  
-
-// Example usage:
-const poissonNumbers = pf.generatePoissonDistribution(n, 5); // Lambda = 5
-console.log(poissonNumbers)
-
-// Example usage:
-const binomialNumbers = pf.generateBinomialDistribution(n, 0.5); // n = 10, p = 0.5
-console.log(binomialNumbers)
-
-// Example usage:
-const geometricNumbers = pf.generateGeometricDistribution(n, 0.2); // p = 0.2
-console.log(geometricNumbers)
 
 ```
 

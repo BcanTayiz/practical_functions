@@ -1,16 +1,19 @@
 const math = require('mathjs');
 
-// Generate an array of n random numbers from a uniform distribution between 0 and 1.
-function generateUniformDistribution(n) {
+// Generate an array of n random numbers from a uniform distribution between a and b.
+function generateUniformDistribution(n, a, b) {
   const randomNumbers = math.random([n]);
-  return randomNumbers.valueOf();
+  const range = b - a;
+  const uniformNumbers = randomNumbers.map((x) => a + x * range);
+  return uniformNumbers.valueOf();
 }
 
-// Generate an array of n random numbers from a normal (Gaussian) distribution with mean 0 and standard deviation 1.
-function generateNormalDistribution(n) {
+// Generate an array of n random numbers from a normal (Gaussian) distribution with mean mu and standard deviation sigma.
+function generateNormalDistribution(n, mu, sigma) {
   const randomNumbers = math.random([n]);
   const normalNumbers = randomNumbers.map((x) => math.sqrt(-2 * math.log(x)) * math.cos(2 * Math.PI * math.random()));
-  return normalNumbers.valueOf();
+  const scaledNumbers = normalNumbers.map((x) => mu + sigma * x);
+  return scaledNumbers.valueOf();
 }
 
 // Generate an array of n random numbers from an exponential distribution with rate parameter lambda.
@@ -63,6 +66,17 @@ function generateGeometricDistribution(n, p) {
   }
   return geometricNumbers;
 }
+
+// Example usage with custom parameters:
+const n = 1000;
+
+const customUniformNumbers = generateUniformDistribution(n, 5, 15); // Between 5 and 15
+const customNormalNumbers = generateNormalDistribution(n, 10, 2); // Mean = 10, Std Deviation = 2
+const customExponentialNumbers = generateExponentialDistribution(n, 0.7); // Lambda = 0.7
+const customPoissonNumbers = generatePoissonDistribution(n, 3); // Lambda = 3
+const customBinomialNumbers = generateBinomialDistribution(n, 0.3); // n = 10, p = 0.3
+const customGeometricNumbers = generateGeometricDistribution(n, 0.1); // p = 0.1
+
 
 // Calculate the mean of an array of numbers.
 function calculateMean(numbers) {
