@@ -725,6 +725,7 @@ console.log(result2);
 # Example 5
 
 ```js live=true
+
 const informalSentences = [
     "Hey, can you give me a hand with this?",
     "I wanna go to the movies tonight.",
@@ -814,6 +815,55 @@ console.log('Fastest and robust function:', fastestFunction.name);
 
 let all_list = pf.combineAndFlattenLists([pf.genRanUserList(3),pf.genRandEmailList(3),pf.genRandDateObjList(3),pf.genRandEventObjList(3)])
 console.log(all_list)
+
+
+// Example usage:
+const rootFolder = './test-folder';
+const outputFolder = './images';
+const blockedFolders = ['blocked_folder1', 'blocked_folder2'];
+
+pf.convertImagesInFolder(
+    rootFolder,
+    outputFolder,
+    ['.jpg', '.png', '.webp'], // Add '.webp' to accept WebP format
+    800,
+    600,
+    { width: 300, height: 300 },
+    blockedFolders
+  );
+
+
+// Example usage:
+const password = 'MyStrongP@ssw0rd';
+const strength = pf.checkPasswordStrength(password);
+console.log(`Password strength: ${strength}`);
+
+// Example usage: Generate a random password of length 12
+const randomPassword = pf.generateRandomPassword(12);
+console.log("Random Password:", randomPassword);
+
+// Example usage:
+const isPasswordValid = pf.validatePasswordPolicy('My$tr0ngP@ss');
+console.log('Password is Valid:', isPasswordValid);
+
+const password2 = 'SecureP@ss12!Ad-123';
+const isPasswordValid2= pf.validatePasswordPolicy(password2);
+console.log('Password is Valid:', isPasswordValid2);
+
+
+const folderPath = '.'; // Replace with the actual folder path
+const ignoreDirs = ['node_modules', 'other_dir_to_ignore']; // Specify directories to ignore
+pf.countLinesInFolder(folderPath, ignoreDirs)
+  .then((totalLines) => {
+    if (totalLines !== -1) {
+      console.log(`Total Lines of Code: ${totalLines}`);
+    } else {
+      console.log('Error occurred during counting lines.');
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 
 ```
 

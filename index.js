@@ -45,6 +45,9 @@ const randomData = require('./randomData')
 const stringMatch = require('./textMatch')
 const stringInformal = require('./stringInformal')
 const benchmark = require('./benchmark')
+const changeImage = require('./changeImage')
+const password = require('./password')
+const countLines = require('./countLines')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -164,7 +167,12 @@ module.exports = {
     findMostSimilarText:stringMatch.findMostSimilarText,
     findMostSimDetailed:stringMatch.findMostSimDetailed,
     detectNaiveInformality:stringInformal.detectNaiveInformality,
-    findFastFunc:benchmark.findFastFunc
+    findFastFunc:benchmark.findFastFunc,
+    convertImagesInFolder:changeImage.convertImagesInFolder,
+    generateRandomPassword:password.generateRandomPassword,
+    checkPasswordStrength:password.checkPasswordStrength,
+    validatePasswordPolicy:password.validatePasswordPolicy,
+    countLinesInFolder:countLines.countLinesInFolder
 };
 
 
