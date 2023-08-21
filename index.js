@@ -51,6 +51,7 @@ const countLines = require('./countLines')
 const objectDetail = require('./objectDetails')
 const scientificTransform = require('./scientificTransform')
 const generateDist = require('./generateDist')
+const basicExpense = require('./basicExpense')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -186,6 +187,7 @@ module.exports = {
     generateGeometricDistribution:generateDist.generateGeometricDistribution,
     calculateMean:generateDist.calculateMean,
     calculateStandardDeviation:generateDist.calculateStandardDeviation,
+    calculateFinancialSummary:basicExpense.calculateFinancialSummary
 };
 
 

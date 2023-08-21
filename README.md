@@ -921,6 +921,26 @@ console.log(customBinomialNumbers,'Uniform')
 console.log(customGeometricNumbers,'Geometric')
 
 
+// Sample financial data object with additional categories
+const financialData = {
+  salary: [5000, 6000, 5500, 7000, 7500],
+  freelanceIncome: [1000, 1200, 800, 1500, 2000],
+  rentalIncome: [600, 700, 650, 750, 800],
+  groceries: [500, 550, 520, 600, 480],
+  utilities: [200, 220, 210, 230, 240],
+  rent: [1200, 1200, 1200, 1200, 1200],
+  investments: [1000, 1500, 2000, 1800, 2500],
+};
+
+// Example usage:
+const spendingCategories = ['utilities', 'groceries'];
+const earningCategories = ['investments', 'salary'];
+
+const summaryTable = pf.calculateFinancialSummary(spendingCategories, earningCategories, financialData);
+console.log(summaryTable);
+
+
+
 ```
 
 
