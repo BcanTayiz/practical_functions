@@ -48,6 +48,9 @@ const benchmark = require('./benchmark')
 const changeImage = require('./changeImage')
 const password = require('./password')
 const countLines = require('./countLines')
+const objectDetail = require('./objectDetails')
+const scientificTransform = require('./scientificTransform')
+const generateDist = require('./generateDist')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -172,7 +175,17 @@ module.exports = {
     generateRandomPassword:password.generateRandomPassword,
     checkPasswordStrength:password.checkPasswordStrength,
     validatePasswordPolicy:password.validatePasswordPolicy,
-    countLinesInFolder:countLines.countLinesInFolder
+    countLinesInFolder:countLines.countLinesInFolder,
+    getObjectDetails:objectDetail.getObjectDetails,
+    convertMeasurement:scientificTransform.convertMeasurement,
+    generateUniformDistribution:generateDist.generateUniformDistribution,
+    generateNormalDistribution:generateDist.generateNormalDistribution,
+    generateExponentialDistribution:generateDist.generateExponentialDistribution,
+    generatePoissonDistribution:generateDist.generatePoissonDistribution,
+    generateBinomialDistribution:generateDist.generateBinomialDistribution,
+    generateGeometricDistribution:generateDist.generateGeometricDistribution,
+    calculateMean:generateDist.calculateMean,
+    calculateStandardDeviation:generateDist.calculateStandardDeviation,
 };
 
 

@@ -865,6 +865,84 @@ pf.countLinesInFolder(folderPath, ignoreDirs)
     console.error('Error:', error);
   });
 
+
+  const myObject = {
+    name: 'John',
+    age: 30,
+    address: {
+      street: '123 Main St',
+      zip: '10001',
+      coordinates: {
+        latitude: 40.7128,
+        longitude: -74.0060
+      }
+    },
+    hobbies: ['Reading', 'Cooking', 'Traveling'],
+    scores: [85, 92, 78],
+    isStudent: true,
+    additionalInfo: {
+      interests: ['Sports', 'Music'],
+      rating: 4.5
+    }
+  };
+  
+  const objectDetails = pf.getObjectDetails(myObject);
+  console.log(objectDetails);
+
+  const lengthInMeters = 5;
+const lengthInFeet = pf.convertMeasurement(lengthInMeters, 'meter', 'feet');
+console.log(`${lengthInMeters} meters is equal to ${lengthInFeet} feet.`);
+
+const massInKg = 10;
+const massInPounds = pf.convertMeasurement(massInKg, 'kg', 'pound');
+console.log(`${massInKg} kilograms is equal to ${massInPounds} pounds.`);
+
+const temperatureInCelsius = 25;
+const temperatureInFahrenheit = pf.convertMeasurement(temperatureInCelsius, 'celsius', 'fahrenheit');
+console.log(`${temperatureInCelsius} degrees Celsius is equal to ${temperatureInFahrenheit} degrees Fahrenheit.`);
+
+// Add more examples for other measurement types as needed.
+
+// Example usage:
+const n = 1000;
+
+const uniformNumbers = pf.generateUniformDistribution(n);
+const normalNumbers = pf.generateNormalDistribution(n);
+const exponentialNumbers = pf.generateExponentialDistribution(n, 0.5);
+
+const uniformMean = pf.calculateMean(uniformNumbers);
+const uniformStdDev = pf.calculateStandardDeviation(uniformNumbers);
+
+const normalMean = pf.calculateMean(normalNumbers);
+const normalStdDev = pf.calculateStandardDeviation(normalNumbers);
+
+const exponentialMean = pf.calculateMean(exponentialNumbers);
+const exponentialStdDev = pf.calculateStandardDeviation(exponentialNumbers);
+
+console.log('Uniform Distribution:');
+console.log(`Mean: ${uniformMean}`);
+console.log(`Standard Deviation: ${uniformStdDev}`);
+
+console.log('Normal Distribution:');
+console.log(`Mean: ${normalMean}`);
+console.log(`Standard Deviation: ${normalStdDev}`);
+
+console.log('Exponential Distribution:');
+console.log(`Mean: ${exponentialMean}`);
+console.log(`Standard Deviation: ${exponentialStdDev}`);  
+
+// Example usage:
+const poissonNumbers = pf.generatePoissonDistribution(n, 5); // Lambda = 5
+console.log(poissonNumbers)
+
+// Example usage:
+const binomialNumbers = pf.generateBinomialDistribution(n, 0.5); // n = 10, p = 0.5
+console.log(binomialNumbers)
+
+// Example usage:
+const geometricNumbers = pf.generateGeometricDistribution(n, 0.2); // p = 0.2
+console.log(geometricNumbers)
+
 ```
 
 

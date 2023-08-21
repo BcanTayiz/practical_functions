@@ -29,6 +29,7 @@
   "dependencies": {
     "decimal.js": "^10.4.3",
     "fs": "^0.0.1-security",
+    "mathjs": "^11.9.1",
     "pako": "^2.1.0",
     "path": "^0.12.7",
     "sharp": "^0.32.5",
