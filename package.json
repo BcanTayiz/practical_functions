@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-multiple": "npm publish && npm publish --registry=https://r.privjs.com"
+    "publish-multiple": "npm version patch && npm publish && npm publish --registry=https://r.privjs.com"
   },
   "repository": {
     "type": "git",
