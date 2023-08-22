@@ -52,6 +52,7 @@ const objectDetail = require('./objectDetails')
 const scientificTransform = require('./scientificTransform')
 const generateDist = require('./generateDist')
 const basicExpense = require('./basicExpense')
+const primeNumbers = require('./primeNumbers')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -90,10 +91,17 @@ module.exports = {
     createRandomList:randomGen.createRandomList,
     getNumbers:generateNumbers.getNumbers,
     alterObjectValues:changeObjects.alterObjectValues,
+    exponentiateObjectValues:changeObjects.exponentiateObjectValues,
+    absoluteObjectValues:changeObjects.absoluteObjectValues,
+    roundObjectValues:changeObjects.roundObjectValues,
+    concatenateObjectValues:changeObjects.concatenateObjectValues,
+    extractNumObjList:changeObjects.extractNumObjList,
+    reduceValObjList:changeObjects.reduceValObjList,
     listReducer : reduceList.listReducer,
     replaceAt:stringManuplation.replaceAt,
     filterStringsByTerm:stringSearch.filterStringsByTerm,
     swapArrayElements:arrayManuplation.swapArrayElements,
+    rotateArray:arrayManuplation.rotateArray,
     findMaxMin:maxMin.findMaxMin,
     findMatchingCombinations:mathFormula.findMatchingCombinations,
     recursiveMathOperation:recursiveMath.recursiveMathOperation,
@@ -146,10 +154,21 @@ module.exports = {
     findNDividers:dividers.findNDividers,
     convertMemory:convertMemory.convertMemory,
     changeFileExtension:changeFolder.changeFileExtension,
+    deleteFilesWithExtension:changeFolder.deleteFilesWithExtension,
+    createDirectory:changeFolder.createDirectory,
+    copyFiles:changeFolder.copyFiles,
+    getFilesWithExtension:changeFolder.getFilesWithExtension,
+    removeEmptyDirectories:changeFolder.removeEmptyDirectories,
     generateRandomString:generateString.generateRandomString,
     customCompress:compress.customCompress,
     customDecompress:compress.customDecompress,
     calculateEntropy:calculateEntropy.calculateEntropy,
+    calculateInformationGain:calculateEntropy.calculateInformationGain,
+    generateRandomBinarySequence:calculateEntropy.generateRandomBinarySequence,
+    findLongestConsecutiveRun:calculateEntropy.findLongestConsecutiveRun,
+    calculateCrossEntropy:calculateEntropy.calculateCrossEntropy,
+    isEntropyBelowThreshold:calculateEntropy.isEntropyBelowThreshold,
+    findExtremeEntropySequence:calculateEntropy.findExtremeEntropySequence,
     meanSquaredError:measureError.meanSquaredError,
     rootMeanSquaredError:measureError.rootMeanSquaredError,
     relativeSquaredError:measureError.relativeSquaredError,
@@ -172,7 +191,14 @@ module.exports = {
     findMostSimDetailed:stringMatch.findMostSimDetailed,
     detectNaiveInformality:stringInformal.detectNaiveInformality,
     findFastFunc:benchmark.findFastFunc,
+    findSlowFunc:benchmark.findSlowFunc,
+    findMostRobustFunc:benchmark.findMostRobustFunc,
+    measureAverageExecutionTime:benchmark.measureAverageExecutionTime,
+    compareFunctions:benchmark.compareFunctions,
+    autoSelectFunction:benchmark.autoSelectFunction,
     convertImagesInFolder:changeImage.convertImagesInFolder,
+    deleteImagesInFolder:changeImage.deleteImagesInFolder,
+    renameImagesInFolder:changeImage.renameImagesInFolder,
     generateRandomPassword:password.generateRandomPassword,
     checkPasswordStrength:password.checkPasswordStrength,
     validatePasswordPolicy:password.validatePasswordPolicy,
@@ -187,7 +213,19 @@ module.exports = {
     generateGeometricDistribution:generateDist.generateGeometricDistribution,
     calculateMean:generateDist.calculateMean,
     calculateStandardDeviation:generateDist.calculateStandardDeviation,
-    calculateFinancialSummary:basicExpense.calculateFinancialSummary
+    calculateFinancialSummary:basicExpense.calculateFinancialSummary,
+    calculateSavingsPercentage:basicExpense.calculateSavingsPercentage,
+    findMostExpensiveCategory:basicExpense.findMostExpensiveCategory,
+    calculateMonthlyAverageEarnings:basicExpense.calculateMonthlyAverageEarnings,
+    determineProfitOrLoss:basicExpense.determineProfitOrLoss,
+    calculateMonthlyCashFlow:basicExpense.calculateMonthlyCashFlow,
+    isPrime:primeNumbers.isPrime,
+    generatePrimesInRange:primeNumbers.generatePrimesInRange,
+    nthPrime:primeNumbers.nthPrime,
+    countPrimesInRange:primeNumbers.countPrimesInRange,
+    generateTwinPrimesInRange:primeNumbers.generateTwinPrimesInRange,
+    primeFactorization:primeNumbers.primeFactorization,
+    sieveOfEratosthenes:primeNumbers.sieveOfEratosthenes
 };
 
 

@@ -62,8 +62,44 @@ function convertImagesInFolder(
     }
   }
 
+function deleteImagesInFolder(folderPath, targetExtensions = ['.jpg', '.png', '.webp']) {
+  const files = fs.readdirSync(folderPath);
+
+  for (const file of files) {
+      const filePath = path.join(folderPath, file);
+
+      if (fs.statSync(filePath).isDirectory()) {
+          deleteImagesInFolder(filePath, targetExtensions);
+      } else if (targetExtensions.some(ext => file.match(new RegExp(`${ext}$`, 'i')))) {
+          fs.unlinkSync(filePath);
+          console.log(`Deleted: ${filePath}`);
+      }
+  }
+}
+
+function renameImagesInFolder(folderPath, renameFunction) {
+  const files = fs.readdirSync(folderPath);
+
+  for (const file of files) {
+      const filePath = path.join(folderPath, file);
+
+      if (fs.statSync(filePath).isDirectory()) {
+          renameImagesInFolder(filePath, renameFunction);
+      } else {
+          const newFileName = renameFunction(file);
+          const newPath = path.join(folderPath, newFileName);
+
+          fs.renameSync(filePath, newPath);
+          console.log(`Renamed: ${filePath} -> ${newPath}`);
+      }
+  }
+}
+
+
 
 module.exports = {
-    convertImagesInFolder:convertImagesInFolder
+    convertImagesInFolder:convertImagesInFolder,
+    deleteImagesInFolder:deleteImagesInFolder,
+    renameImagesInFolder:renameImagesInFolder
 }
 

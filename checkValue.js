@@ -21,15 +21,6 @@ function checkValue(arrayOrObject, value) {
     }
 }
 
-const array = [1, 2, 3, 4, 5];
-const object = {
-    name: 'John',
-    age: 30,
-    hobbies: ['reading', 'swimming']
-};
-
-
-
 function modulerCheck(array,value){
     if(!Array.isArray(array)){
         throw Error('First value must be an array')
