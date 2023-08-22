@@ -53,6 +53,7 @@ const scientificTransform = require('./scientificTransform')
 const generateDist = require('./generateDist')
 const basicExpense = require('./basicExpense')
 const primeNumbers = require('./primeNumbers')
+const readMeView = require('./readMe')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -225,7 +226,8 @@ module.exports = {
     countPrimesInRange:primeNumbers.countPrimesInRange,
     generateTwinPrimesInRange:primeNumbers.generateTwinPrimesInRange,
     primeFactorization:primeNumbers.primeFactorization,
-    sieveOfEratosthenes:primeNumbers.sieveOfEratosthenes
+    sieveOfEratosthenes:primeNumbers.sieveOfEratosthenes,
+    createReadMeViewer:readMeView.createReadMeViewer
 };
 
 
