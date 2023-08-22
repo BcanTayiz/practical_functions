@@ -1142,6 +1142,15 @@ console.log(modifiedListObjVal);
 
 ```
 
+# Example 7
+
+```js live=true
+// Usage example
+const readMeFilePath = 'readMeView.md'; // Provide the path to your README.md file
+pf.createReadMeViewer(readMeFilePath);
+
+```
+
 
 * You can check the code from github
 * code is made to simplfy the steps on javascript
