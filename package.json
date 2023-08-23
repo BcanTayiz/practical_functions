@@ -27,11 +27,13 @@
   },
   "homepage": "https://github.com/BcanTayiz/practical_functions#readme",
   "dependencies": {
+    "csv-parser": "^3.0.0",
     "decimal.js": "^10.4.3",
     "fs": "^0.0.1-security",
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
     "mathjs": "^11.9.1",
+    "natural": "^6.5.0",
     "pako": "^2.1.0",
     "path": "^0.12.7",
     "sharp": "^0.32.5",

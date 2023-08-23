@@ -76,6 +76,11 @@ function isNumeric(n,returnValue=false) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
+function isEmptyObject(obj) {
+    // Check if the object is empty by comparing the number of keys to zero
+    return Object.keys(obj).length === 0;
+}
+
 
 
 
@@ -86,5 +91,6 @@ module.exports = {
     objectLength:objectLength,
     checkDates:checkDates,
     isNumeric:isNumeric,
-    isValidDate:isValidDate
+    isValidDate:isValidDate,
+    isEmptyObject:isEmptyObject
 };

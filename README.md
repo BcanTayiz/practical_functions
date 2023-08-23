@@ -1320,6 +1320,52 @@ const flattenedArray = pf.flattenArray(nestedArray);
 
 console.log(flattenedArray); // Output: [1, 2, 3, 4, 5, 6]
 
+
+// Example usage:
+const userInput1 = "programming"; // Replace with user's input
+const searchResults = pf.vectorSearch(userInput1, 5);
+searchResults.forEach(result => {
+    console.log(`Text: ${result.text}\nSimilarity: ${result.similarity}\n`);
+});
+
+console.log('----------------------------------')
+
+// Example usage:
+const userInput = "data science"; // Replace with user's input
+const searchResults2 = pf.vectorSearch(userInput, 5,json_file='./json_true.json');
+searchResults2.forEach(result => {
+    console.log(`Text: ${result.text}\nSimilarity: ${result.similarity}\n`);
+});
+
+
+// Example usage:
+const inputFile = 'data.txt'; // Replace with the path to your file
+
+pf.fileToJSON(inputFile)
+    .then(jsonData => {
+        console.log(jsonData);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
+// Example usage:
+const inputFile2 = 'data.csv'; // Replace with the path to your file
+
+pf.fileToJSON(inputFile2)
+    .then(jsonData => {
+        console.log(jsonData);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
+
+// Example usage:
+const inputFile3 = 'data.txt'; // Replace with the path to your file
+const jsonData = pf.textFileToJSON(inputFile3);
+console.log(jsonData);
+
 ```
 
 

@@ -54,6 +54,8 @@ const generateDist = require('./generateDist')
 const basicExpense = require('./basicExpense')
 const primeNumbers = require('./primeNumbers')
 const readMeView = require('./readMe')
+const search = require('./search')
+const fileTransform = require('./fileTransform')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -63,6 +65,7 @@ module.exports = {
     checkDates:checkValue.checkDates,
     isNumeric:checkValue.isNumeric,
     isValidDate:checkValue.isValidDate,
+    isEmptyObject:checkValue.isEmptyObject,
     filterUnique:filter.filterUnique,
     compareLists:filter.compareLists,
     substring: stringCompare.substring,
@@ -252,7 +255,13 @@ module.exports = {
     generateTwinPrimesInRange:primeNumbers.generateTwinPrimesInRange,
     primeFactorization:primeNumbers.primeFactorization,
     sieveOfEratosthenes:primeNumbers.sieveOfEratosthenes,
-    createReadMeViewer:readMeView.createReadMeViewer
+    createReadMeViewer:readMeView.createReadMeViewer,
+    cosineSimilarity:search.cosineSimilarity,
+    vectorSearch:search.vectorSearch,
+    tfidfVectorizer:search.tfidfVectorizer,
+    calculateTFIDF:search.calculateTFIDF,
+    fileToJSON:fileTransform.fileToJSON,
+    textFileToJSON:fileTransform.textFileToJSON
 };
 
 
