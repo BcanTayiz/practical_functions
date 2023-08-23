@@ -63,6 +63,130 @@ function convertMeasurement(value, fromUnit, toUnit) {
   }
 
 
+  function convertTemperature(value, fromUnit, toUnit) {
+    if (fromUnit === toUnit) {
+        return value;
+    }
+
+    switch (fromUnit) {
+        case 'Celsius':
+            switch (toUnit) {
+                case 'Fahrenheit':
+                    return (value * 9/5) + 32;
+                case 'Kelvin':
+                    return value + 273.15;
+            }
+            break;
+
+        case 'Fahrenheit':
+            switch (toUnit) {
+                case 'Celsius':
+                    return (value - 32) * 5/9;
+                case 'Kelvin':
+                    return (value - 32) * 5/9 + 273.15;
+            }
+            break;
+
+        case 'Kelvin':
+            switch (toUnit) {
+                case 'Celsius':
+                    return value - 273.15;
+                case 'Fahrenheit':
+                    return (value - 273.15) * 9/5 + 32;
+            }
+            break;
+
+        default:
+            throw new Error('Invalid units provided.');
+    }
+}
+
+
+function convertLength(value, fromUnit, toUnit) {
+  const units = {
+      'm': 1,
+      'km': 1000,
+      'ft': 0.3048,
+      'mi': 1609.34
+  };
+
+  if (!(fromUnit in units) || !(toUnit in units)) {
+      throw new Error('Invalid units provided.');
+  }
+
+  return (value * units[fromUnit]) / units[toUnit];
+}
+
+function convertTime(value, fromUnit, toUnit) {
+  const units = {
+      's': 1,
+      'min': 60,
+      'hr': 3600,
+      'day': 86400
+  };
+
+  if (!(fromUnit in units) || !(toUnit in units)) {
+      throw new Error('Invalid units provided.');
+  }
+
+  return (value * units[fromUnit]) / units[toUnit];
+}
+
+
+function convertWeight(value, fromUnit, toUnit) {
+  const units = {
+      'g': 1,
+      'kg': 1000,
+      'oz': 28.3495,
+      'lb': 453.592
+  };
+
+  if (!(fromUnit in units) || !(toUnit in units)) {
+      throw new Error('Invalid units provided.');
+  }
+
+  return (value * units[fromUnit]) / units[toUnit];
+}
+
+
+function convertVolume(value, fromUnit, toUnit) {
+  const units = {
+      'mL': 1,
+      'L': 1000,
+      'fl oz': 29.5735,
+      'gal': 3785.41
+  };
+
+  if (!(fromUnit in units) || !(toUnit in units)) {
+      throw new Error('Invalid units provided.');
+  }
+
+  return (value * units[fromUnit]) / units[toUnit];
+}
+
+
+function convertSpeed(value, fromUnit, toUnit) {
+  const units = {
+      'm/s': 1,
+      'km/h': 0.277778,
+      'mph': 0.44704
+  };
+
+  if (!(fromUnit in units) || !(toUnit in units)) {
+      throw new Error('Invalid units provided.');
+  }
+
+  return (value * units[fromUnit]) / units[toUnit];
+}
+
+
 module.exports = {
-    convertMeasurement:convertMeasurement
+    convertMeasurement:convertMeasurement,
+    convertTemperature:convertTemperature,
+    convertLength:convertLength,
+    convertTime:convertTime,
+    convertWeight:convertWeight,
+    convertVolume:convertVolume,
+    convertSpeed:convertSpeed,
+
 }

@@ -4,8 +4,7 @@
   "description": "Make your javascript functions faster and use benefits of practical_functions package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish-multiple": "npm version patch && npm publish && npm publish --registry=https://r.privjs.com"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -42,7 +41,7 @@
     "react": "^16.0.0",
     "vue": "^2.0.0"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  }
+  "publishConfig": { "registry": "https://r.privjs.com" }
 }
+
+

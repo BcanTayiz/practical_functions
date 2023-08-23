@@ -47,7 +47,29 @@ function calculateCorrelationMatrix(matrix) {
     return correlationMatrix;
 }
 
+function calculateCorrelationCoefficient(dataX, dataY) {
+    if (dataX.length !== dataY.length) {
+        throw new Error('Input arrays must have the same length.');
+    }
+
+    const n = dataX.length;
+    const sumX = dataX.reduce((acc, val) => acc + val, 0);
+    const sumY = dataY.reduce((acc, val) => acc + val, 0);
+    const sumXY = dataX.reduce((acc, val, index) => acc + val * dataY[index], 0);
+    const sumX2 = dataX.reduce((acc, val) => acc + val ** 2, 0);
+    const sumY2 = dataY.reduce((acc, val) => acc + val ** 2, 0);
+
+    const numerator = n * sumXY - sumX * sumY;
+    const denominator = Math.sqrt((n * sumX2 - sumX ** 2) * (n * sumY2 - sumY ** 2));
+
+    const correlationCoefficient = denominator !== 0 ? numerator / denominator : 0;
+
+    return correlationCoefficient;
+}
+
+
 
 module.exports = {
-    calculateCorrelationMatrix:calculateCorrelationMatrix
+    calculateCorrelationMatrix:calculateCorrelationMatrix,
+    calculateCorrelationCoefficient:calculateCorrelationCoefficient,
 }

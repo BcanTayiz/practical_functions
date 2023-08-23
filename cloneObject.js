@@ -20,10 +20,22 @@ function deepClone(obj) {
     return clonedObj;
 }
 
+function shallowClone(obj) {
+    if (Array.isArray(obj)) {
+        return [...obj]; // Shallow copy for arrays
+    } else if (typeof obj === 'object' && obj !== null) {
+        return { ...obj }; // Shallow copy for objects
+    } else {
+        return obj; // Primitive values
+    }
+}
+
+
 
 
 
 module.exports = {
-    deepClone:deepClone
+    deepClone:deepClone,
+    shallowClone:shallowClone
 };
 

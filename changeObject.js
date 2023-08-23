@@ -138,6 +138,28 @@ function reduceValObjList(listOfObjects, keyToOperateOn, reductionFunction) {
 }
 
 
+function changeKeyValues(list, keyToChange, newValue) {
+    if (!Array.isArray(list)) {
+        throw new Error('Input is not an array');
+    }
+
+    const updatedList = list.map((item) => {
+        if (typeof item === 'object' && item !== null && keyToChange in item) {
+            // Create a new object with the updated key
+            const newItem = { ...item };
+            newItem[newValue] = newItem[keyToChange];
+            delete newItem[keyToChange];
+            return newItem;
+        } else {
+            return item;
+        }
+    });
+
+    return updatedList;
+}
+
+
+
 module.exports = {
     alterObjectValues:alterObjectValues,
     exponentiateObjectValues:exponentiateObjectValues,
@@ -145,5 +167,6 @@ module.exports = {
     roundObjectValues:roundObjectValues,
     concatenateObjectValues:concatenateObjectValues,
     extractNumObjList:extractNumObjList,
-    reduceValObjList:reduceValObjList
+    reduceValObjList:reduceValObjList,
+    changeKeyValues:changeKeyValues
 }

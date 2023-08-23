@@ -17,8 +17,46 @@ function customDecompress(compressedString) {
   return decoder.decode(decompressedData);
 }
 
+function compressJSON(jsonObject) {
+  const jsonString = JSON.stringify(jsonObject);
+  return customCompress(jsonString);
+}
+
+function decompressJSON(compressedString) {
+  const decompressedString = customDecompress(compressedString);
+  return JSON.parse(decompressedString);
+}
+
+function encodeBase64(data) {
+  return btoa(data);
+}
+
+function decodeBase64(encodedData) {
+  return atob(encodedData);
+}
+
+function encodeURLSafeBase64(data) {
+  const base64 = encodeBase64(data);
+  return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function decodeURLSafeBase64(encodedData) {
+  let base64 = encodedData.replace(/-/g, '+').replace(/_/g, '/');
+  while (base64.length % 4) {
+      base64 += '=';
+  }
+  return decodeBase64(base64);
+}
+
+
 
 module.exports = {
     customCompress:customCompress,
-    customDecompress:customDecompress
+    customDecompress:customDecompress,
+    compressJSON:compressJSON,
+    decompressJSON:decompressJSON,
+    encodeBase64:encodeBase64,
+    decodeBase64:decodeBase64,
+    encodeURLSafeBase64:encodeURLSafeBase64,
+    decodeURLSafeBase64:decodeURLSafeBase64,
 }

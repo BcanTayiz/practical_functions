@@ -33,8 +33,62 @@ function rotateArray(array, positions, direction = 'right') {
     return array;
   }
 
+  function chunkArray(arr, chunkSize) {
+    if (!Array.isArray(arr) || chunkSize <= 0) {
+        throw Error('Invalid input');
+    }
+
+    const result = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+        result.push(arr.slice(i, i + chunkSize));
+    }
+
+    return result;
+}
+
+
+function arrayToMatrix(arr, n, m) {
+  if (!Array.isArray(arr) || n <= 0 || m <= 0) {
+      throw Error('Invalid input');
+  }
+
+  const totalElements = n * m;
+  if (arr.length !== totalElements) {
+      throw Error('Array length is not compatible with the matrix dimensions');
+  }
+
+  const matrix = [];
+  for (let i = 0; i < n; i++) {
+      const row = [];
+      for (let j = 0; j < m; j++) {
+          row.push(arr[i * m + j]);
+      }
+      matrix.push(row);
+  }
+
+  return matrix;
+}
+
+function flattenArray(arr) {
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+          // If the element is an array, recursively flatten it
+          result = result.concat(flattenArray(arr[i]));
+      } else {
+          // If the element is not an array, add it to the result
+          result.push(arr[i]);
+      }
+  }
+
+  return result;
+}
 
 module.exports={
     swapArrayElements:swapArrayElements,
-    rotateArray:rotateArray
+    rotateArray:rotateArray,
+    chunkArray:chunkArray,
+    arrayToMatrix:arrayToMatrix,
+    flattenArray:flattenArray
 }
