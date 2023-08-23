@@ -15,7 +15,7 @@
 
 ## More Features
 
-You can find more feature available version on the website ==> [website](https://www.privjs.com/packages/practical-functions).
+You can find more feature available version on the website ==> [more features](https://www.privjs.com/packages/practical-functions).
 
 ## Labels
 - simple
