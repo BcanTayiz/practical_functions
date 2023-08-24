@@ -56,6 +56,8 @@ const primeNumbers = require('./primeNumbers')
 const readMeView = require('./readMe')
 const search = require('./search')
 const fileTransform = require('./fileTransform')
+const arrayCreation = require('./arrayCreation')
+const count = require('./count')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -78,6 +80,9 @@ module.exports = {
     valueEmpty:compare.valueEmpty,
     multipleConditions:compare.multipleConditions,
     getType:compare.getType,
+    countMatchesInText:count.countMatchesInText,
+    countSelectedValues:count.countSelectedValues,
+    countValuesInBins:count.countValuesInBins,
     deepClone:deepClone.deepClone,
     shallowClone:deepClone.shallowClone,
     transformBoolean:transform.transformBoolean,
@@ -111,6 +116,17 @@ module.exports = {
     chunkArray:arrayManuplation.chunkArray,
     arrayToMatrix:arrayManuplation.arrayToMatrix,
     flattenArray:arrayManuplation.flattenArray,
+    createArrayWithValues:arrayCreation.createArrayWithValues,
+    createArrayWithValues:arrayCreation.createArrayWithValues,
+    createRandomArray:arrayCreation.createRandomArray,
+    createArrayWithRepeatedValue:arrayCreation.createArrayWithRepeatedValue,
+    createBooleanArray:arrayCreation.createBooleanArray,
+    createEmptyArray:arrayCreation.createEmptyArray,
+    createDateArray:arrayCreation.createDateArray,
+    create2DArray:arrayCreation.create2DArray,
+    createSubarrays:arrayCreation.createSubarrays,
+    createBinsFromArray:arrayCreation.createBinsFromArray,
+    createRandomArrayFromList:arrayCreation.createRandomArrayFromList,
     findMaxMin:maxMin.findMaxMin,
     findMatchingCombinations:mathFormula.findMatchingCombinations,
     recursiveMathOperation:recursiveMath.recursiveMathOperation,

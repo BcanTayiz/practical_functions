@@ -1373,6 +1373,111 @@ console.log(jsonData);
 ```
 
 
+# Example 8
+
+```js live=true
+
+// Example usage:
+const length = 5; // Change this to your desired array length
+const value = 0;  // Change this to the value you want in the array
+const resultArray = pf.createArrayWithValues(length, value);
+console.log(resultArray);
+
+const length2 = 5;
+const value2 = 42;
+const newArray = pf.createArrayWithValues(length2, value2);
+console.log(newArray);
+// Output: [42, 42, 42, 42, 42]
+
+const length3 = 5;
+const min = 1;
+const max = 100;
+const randomArray = pf.createRandomArray(length3, min, max);
+console.log(randomArray);
+// Output: [83, 7, 45, 96, 32]
+
+const length4 = 4;
+const value4 = "Hello";
+const repeatedArray = pf.createArrayWithRepeatedValue(length4, value4);
+console.log(repeatedArray);
+// Output: ["Hello", "Hello", "Hello", "Hello"]
+
+const length5 = 3;
+const value5 = true;
+const booleanArray = pf.createBooleanArray(length5, value5);
+console.log(booleanArray);
+// Output: [true, true, true]
+
+const length6 = 2;
+const emptyArray = pf.createEmptyArray(length6);
+console.log(emptyArray);
+// Output: [ <2 empty items> ]
+
+const startDate = new Date('2023-08-01');
+const endDate = new Date('2023-08-05');
+const dateArray = pf.createDateArray(startDate, endDate);
+console.log(dateArray);
+// Output: An array of Date objects for each day from August 1 to August 5, 2023.
+
+const rows = 3;
+const cols = 2;
+const initialValue = 0;
+const matrix = pf.create2DArray(rows, cols, initialValue);
+console.log(matrix);
+/* Output:
+[
+    [0, 0],
+    [0, 0],
+    [0, 0]
+]
+*/
+
+// Example usage:
+const valueList = ["apple", "banana", "cherry", "date"];
+const lengthList = 5; // Change this to the desired length of the random array
+const randomArrayList = pf.createRandomArrayFromList(valueList, lengthList);
+console.log(randomArrayList);
+
+// Example usage:
+const sampleText = "apple banana apple cherry banana";
+const searchItems = ["apple", "banana", "cherry"];
+
+const matchCounts = pf.countMatchesInText(sampleText, searchItems);
+
+console.log(matchCounts);
+
+// Example usage:
+const valuesToCount = [1, 2, 3, 1, 2, 4, 2, 5];
+const valuesGiven = [1, 2, 4];
+
+const countedValues = pf.countSelectedValues(valuesToCount, valuesGiven);
+
+console.log(countedValues);
+
+// Example usage:
+const dataArray = [1, 2, 3, 5, 7, 8, 9, 12, 15, 20];
+const binArray = [
+    [0, 5],
+    [5, 10],
+    [10, 15],
+    [15, 20],
+];
+
+const countedValuesBin = pf.countValuesInBins(dataArray, binArray);
+
+console.log(countedValuesBin);
+
+// Example usage:
+const dataArray2 = pf.createRandomArray(30, 0, 100);
+const numBins = 5;
+
+const binArray2 = pf.createBinsFromArray(dataArray2, numBins);
+
+console.log(binArray2);
+
+```
+
+
 * You can check the code from github
 * code is made to simplfy the steps on javascript
 * I will update the code and function when I find new problems
