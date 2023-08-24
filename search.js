@@ -1,4 +1,3 @@
-const natural = require('natural');
 const fs = require('fs');
 const {isEmptyObject} = require('./checkValue')
 
@@ -147,4 +146,6 @@ function calculateTFIDF(document, corpus) {
 module.exports = {
     cosineSimilarity:cosineSimilarity,
     vectorSearch:vectorSearch,
+    tfidfVectorizer:tfidfVectorizer,
+    calculateTFIDF:calculateTFIDF,
 }
