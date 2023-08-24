@@ -1,4 +1,23 @@
-﻿# Practical Javascript
+﻿<p align="center">
+  <h1>Practical Functions</h1>
+</p>
+
+---
+<div align="center">
+    <img src="../package/logo/logo.png" alt="Logo" width="500" heigth="300"/>
+</div>
+
+
+
+
+---
+> Code is simple. You can analyze code [what it does here](https://github.com/BcanTayiz/practical_functions) 
+> There are lots of different functions to make it easier javascript coding experience.
+> There are many provided function in scope of:
+> **Math,Array Manuplation,Array Creation, Object Manuplation,Statistics, Matrix Calculation
+> Random Number Generation, Random List Generation and more**
+
+---
 
 ## Usability
 
@@ -6,6 +25,7 @@
 * When you try something and bugged at some problem,
 * While you want to focus something besides functionality,
 * This project supports you while you can consider other problems,
+---
 
 ![Travis Status](https://img.shields.io/travis/:BcanTayiz/:practical_functions)
 ![NPM Downloads](https://img.shields.io/npm/dw/:practical_functions)
@@ -13,20 +33,7 @@
 [![Twitter](https://img.shields.io/twitter/follow/:iz_apps.svg?style=social&label=@:iz_apps)](https://twitter.com/:iz_apps)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-orange?style=for-the-badge&logo=ko-fi)](https://www.buymeacoffee.com/codermakerv)
 
-## More Features
-
-You can find more feature available version on the website ==> [more features](https://www.privjs.com/packages/practical-functions).
-
-## Labels
-- simple
-- loop
-- function
-- list
-- filter
-- usability
-- array
-- object
-
+---
 # Usage of Functions
 
 
