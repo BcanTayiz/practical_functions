@@ -4,11 +4,8 @@
 
 ---
 <div align="center">
-    <img src="../package/logo/logo.png" alt="Logo" width="500" heigth="300"/>
+    <img src="./logo/logo.png" alt="Logo" width="500" heigth="300"/>
 </div>
-
-
-
 
 ---
 > Code is simple. You can analyze code [what it does here](https://github.com/BcanTayiz/practical_functions) 
