@@ -58,6 +58,8 @@ const search = require('./search')
 const fileTransform = require('./fileTransform')
 const arrayCreation = require('./arrayCreation')
 const count = require('./count')
+const similarity = require('./similarity')
+const weirdPrediction = require('./weirdPrediction')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -162,6 +164,8 @@ module.exports = {
     polygonArea:mathOperations.polygonArea,
     moduleNegative:mathOperations.moduleNegative,
     findRoot:mathOperations.findRoot,
+    performMathOperationsBatch:mathOperations.performMathOperationsBatch,
+    performMathOperation:mathOperations.performMathOperation,
     createMatrixFromArray:matrix.createMatrixFromArray,
     prettyPrintMatrix:matrix.prettyPrintMatrix,
     createTableFromMatrix:matrix.createTableFromMatrix,
@@ -250,6 +254,10 @@ module.exports = {
     convertWeight:scientificTransform.convertWeight,
     convertVolume:scientificTransform.convertVolume,
     convertSpeed:scientificTransform.convertSpeed,
+    levenshteinDistance:similarity.levenshteinDistance,
+    compareFunctionSimilarity:similarity.compareFunctionSimilarity,
+    latentSemanticAnalysis:similarity.latentSemanticAnalysis,
+    jaccardSimilarity:similarity.jaccardSimilarity,
     generateUniformDistribution:generateDist.generateUniformDistribution,
     generateNormalDistribution:generateDist.generateNormalDistribution,
     generateExponentialDistribution:generateDist.generateExponentialDistribution,
@@ -277,7 +285,10 @@ module.exports = {
     tfidfVectorizer:search.tfidfVectorizer,
     calculateTFIDF:search.calculateTFIDF,
     fileToJSON:fileTransform.fileToJSON,
-    textFileToJSON:fileTransform.textFileToJSON
+    textFileToJSON:fileTransform.textFileToJSON,
+    calculateMovingAverage:weirdPrediction.calculateMovingAverage,
+    predictNextNumbers:weirdPrediction.predictNextNumbers,
+    predicNumLearning:weirdPrediction.predicNumLearning,
 };
 
 

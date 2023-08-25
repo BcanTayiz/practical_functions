@@ -105,11 +105,65 @@ function evaluateDerivative(coefficients, x) {
     return result;
 }
 
+function performMathOperationsBatch(operations) {
+  const results = [];
+
+  for (const operation of operations) {
+      const op = operation[0];
+      const list = operation.slice(1);
+
+      if (op === "sum") {
+          const result = list.reduce((acc, val) => acc + val, 0);
+          results.push(`Sum: ${result}`);
+      } else if (op === "multiply") {
+          const result = list.reduce((acc, val) => acc * val, 1);
+          results.push(`Multiply: ${result}`);
+      } else if (op === "factorial") {
+          const result = list.map(factorial);
+          results.push(`Factorial: [${result}]`);
+      } else if (op === "fibonacci") {
+          const result = list.map(fibonacci);
+          results.push(`Fibonacci: [${result}]`);
+      } else if (op === "subtract") {
+          const result = list.reduce((acc, val) => acc - val);
+          results.push(`Subtract: ${result}`);
+      } else if (op === "divide") {
+          const result = list.reduce((acc, val) => acc / val);
+          results.push(`Divide: ${result}`);
+      } else {
+          results.push("Invalid operation");
+      }
+  }
+
+  return results;
+}
+
+function performMathOperation(operation, list) {
+  switch (operation) {
+      case "sum":
+          return list.reduce((acc, val) => acc + val, 0);
+      case "multiply":
+          return list.reduce((acc, val) => acc * val, 1);
+      case "factorial":
+          return factorial(list[0]);
+      case "fibonacci":
+          return fibonacci(list[0]);
+      case "subtract":
+          return list.reduce((acc, val) => acc - val);
+      case "divide":
+          return list.reduce((acc, val) => acc / val);
+      default:
+          return "Invalid operation";
+  }
+}
+
 
 module.exports = {
     performArrayOperation:performArrayOperation,
     polygonArea:polygonArea,
     moduleNegative:moduleNegative,
     evaluatePolynomial:evaluatePolynomial,
-    findRoot:findRoot
+    findRoot:findRoot,
+    performMathOperationsBatch:performMathOperationsBatch,
+    performMathOperation:performMathOperation
 }

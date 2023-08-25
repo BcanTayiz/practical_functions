@@ -1,5 +1,9 @@
 function meanSquaredError(yTrue, yPred) {
+    if (yTrue.length !== yPred.length) {
+        throw new Error('Input arrays must have the same length');
+    }
     const n = yTrue.length;
+    console.log(n)
     let sum = 0;
     for (let i = 0; i < n; i++) {
         sum += Math.pow(yTrue[i] - yPred[i], 2);
@@ -12,6 +16,9 @@ function rootMeanSquaredError(yTrue, yPred) {
 }
 
 function relativeSquaredError(yTrue, yPred) {
+    if (yTrue.length !== yPred.length) {
+        throw new Error('Input arrays must have the same length');
+    }
     const numerator = yTrue.reduce((acc, trueVal, i) => acc + Math.pow(trueVal - yPred[i], 2), 0);
     const meanYTrue = yTrue.reduce((acc, val) => acc + val, 0) / yTrue.length;
     const denominator = yTrue.reduce((acc, trueVal) => acc + Math.pow(trueVal - meanYTrue, 2), 0);
@@ -19,6 +26,9 @@ function relativeSquaredError(yTrue, yPred) {
 }
 
 function meanAbsoluteError(yTrue, yPred) {
+    if (yTrue.length !== yPred.length) {
+        throw new Error('Input arrays must have the same length');
+    }
     const n = yTrue.length;
     let sum = 0;
     for (let i = 0; i < n; i++) {
@@ -28,6 +38,9 @@ function meanAbsoluteError(yTrue, yPred) {
 }
 
 function coefficientOfDetermination(yTrue, yPred) {
+    if (yTrue.length !== yPred.length) {
+        throw new Error('Input arrays must have the same length');
+    }
     const meanYTrue = yTrue.reduce((acc, val) => acc + val, 0) / yTrue.length;
     const numerator = yTrue.reduce((acc, trueVal, i) => acc + Math.pow(trueVal - yPred[i], 2), 0);
     const denominator = yTrue.reduce((acc, trueVal) => acc + Math.pow(trueVal - meanYTrue, 2), 0);
@@ -35,6 +48,9 @@ function coefficientOfDetermination(yTrue, yPred) {
 }
 
 function meanAbsolutePercentageError(yTrue, yPred) {
+    if (yTrue.length !== yPred.length) {
+        throw new Error('Input arrays must have the same length');
+    }
     const n = yTrue.length;
     let sum = 0;
     for (let i = 0; i < n; i++) {
@@ -44,6 +60,9 @@ function meanAbsolutePercentageError(yTrue, yPred) {
 }
 
 function meanPercentageError(yTrue, yPred) {
+    if (yTrue.length !== yPred.length) {
+        throw new Error('Input arrays must have the same length');
+    }
     const n = yTrue.length;
     let sum = 0;
     for (let i = 0; i < n; i++) {
@@ -53,6 +72,9 @@ function meanPercentageError(yTrue, yPred) {
 }
 
 function meanBiasDeviation(yTrue, yPred) {
+    if (yTrue.length !== yPred.length) {
+        throw new Error('Input arrays must have the same length');
+    }
     const n = yTrue.length;
     let sum = 0;
     for (let i = 0; i < n; i++) {
