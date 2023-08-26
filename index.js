@@ -61,6 +61,7 @@ const count = require('./count')
 const similarity = require('./similarity')
 const weirdPrediction = require('./weirdPrediction')
 const enchancedData = require('./enchanedData')
+const subsets = require('./subsets')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -294,6 +295,8 @@ module.exports = {
     calculateMovingAverage:weirdPrediction.calculateMovingAverage,
     predictNextNumbers:weirdPrediction.predictNextNumbers,
     predicNumLearning:weirdPrediction.predicNumLearning,
+    generateSubsets:subsets.generateSubsets,
+    generateNLengthSubsets:subsets.generateNLengthSubsets,
 };
 
 

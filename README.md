@@ -1697,6 +1697,23 @@ console.log('Numbers Found:', numbersFound3);
 
 ```
 
+# Example 9
+
+```js live=true
+
+// Example usage:
+const inputArray = [1, 2, 3];
+const allSubsets = pf.generateSubsets(inputArray);
+console.log(allSubsets);
+
+// Example usage:
+const inputArray2 = [1, 2, 3, 4];
+const subsetLength = 2;
+const nLengthSubsets = pf.generateNLengthSubsets(inputArray2, subsetLength);
+console.log(nLengthSubsets);
+
+```
+
 
 * You can check the code from github
 * code is made to simplfy the steps on javascript
