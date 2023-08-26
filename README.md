@@ -1638,6 +1638,62 @@ const apiResponse3 = {
 const largestNode3 = pf.enhanceApiResponse(apiResponse3);
 console.log('Example 3 - Largest Node:', largestNode3);
 
+// Example API response with various data types
+const apiResponseFilter = {
+    name: 'John Doe',
+    age: 30,
+    birthdate: '1992-05-15',
+    address: {
+        street: '123 Main St',
+        city: 'Exampleville'
+    },
+    scores: [95, 88, 75, 'A+'],
+    metadata: {
+        createdDate: new Date('2023-01-10'),
+        updatedDate: new Date('2023-08-15')
+    }
+};
+
+// Search for dates within the API response
+const datesFound = pf.findDataByType(apiResponseFilter, 'object');
+console.log('Objects Found:', datesFound);
+
+// Search for strings within the API response
+const stringsFound = pf.findDataByType(apiResponseFilter, 'string');
+console.log('Strings Found:', stringsFound);
+
+// Search for numbers within the API response
+const numbersFound = pf.findDataByType(apiResponseFilter, 'number');
+console.log('Numbers Found:', numbersFound);
+
+
+// Example API response with various data types
+const apiResponseKeys = {
+    name: 'John Doe',
+    age: 30,
+    birthdate: '1992-05-15',
+    address: {
+        street: '123 Main St',
+        city: 'Exampleville'
+    },
+    scores: [95, 88, 75, 'A+'],
+    metadata: {
+        createdDate: new Date('2023-01-10'),
+        updatedDate: new Date('2023-08-15')
+    }
+};
+
+// Search for objects within the API response along with their keys
+const objectsFound = pf.findDataWithKeysByType(apiResponseKeys, 'object');
+console.log('Objects Found:', objectsFound);
+
+// Search for strings within the API response along with their keys
+const stringsFound2 = pf.findDataWithKeysByType(apiResponse, 'string');
+console.log('Strings Found:', stringsFound2);
+
+// Search for numbers within the API response along with their keys
+const numbersFound3 = pf.findDataWithKeysByType(apiResponse, 'number');
+console.log('Numbers Found:', numbersFound3);
 
 ```
 

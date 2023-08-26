@@ -72,6 +72,8 @@ module.exports = {
     isValidDate:checkValue.isValidDate,
     isEmptyObject:checkValue.isEmptyObject,
     enhanceApiResponse:enchancedData.enhanceApiResponse,
+    findDataByType:enchancedData.findDataByType,
+    findDataWithKeysByType:enchancedData.findDataWithKeysByType,
     filterUnique:filter.filterUnique,
     compareLists:filter.compareLists,
     substring: stringCompare.substring,

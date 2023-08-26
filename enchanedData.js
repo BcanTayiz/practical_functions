@@ -34,7 +34,58 @@ function enhanceApiResponse(apiResponse) {
 }
 
 
+function findDataByType(apiResponse, targetType) {
+    const foundData = [];
+
+    function searchForType(data) {
+        if (typeof data === targetType) {
+            foundData.push(data);
+        } else if (typeof data === 'object' && data !== null) {
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    searchForType(data[key]);
+                }
+            }
+        } else if (Array.isArray(data)) {
+            data.forEach(item => {
+                searchForType(item);
+            });
+        }
+    }
+
+    searchForType(apiResponse);
+
+    return foundData;
+}
+
+function findDataWithKeysByType(apiResponse, targetType) {
+    const foundData = [];
+
+    function searchForType(data, currentPath) {
+        if (typeof data === targetType) {
+            foundData.push({ path: currentPath, value: data });
+        } else if (typeof data === 'object' && data !== null) {
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    searchForType(data[key], `${currentPath}.${key}`);
+                }
+            }
+        } else if (Array.isArray(data)) {
+            data.forEach((item, index) => {
+                searchForType(item, `${currentPath}[${index}]`);
+            });
+        }
+    }
+
+    searchForType(apiResponse, 'apiResponse');
+
+    return foundData;
+}
+
+
 
 module.exports = {
     enhanceApiResponse:enhanceApiResponse,
+    findDataByType:findDataByType,
+    findDataWithKeysByType:findDataWithKeysByType,
 }
