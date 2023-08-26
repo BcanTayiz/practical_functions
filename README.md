@@ -1475,6 +1475,170 @@ const binArray2 = pf.createBinsFromArray(dataArray2, numBins);
 
 console.log(binArray2);
 
+// Example usage:
+function functionA() {
+    return "Hello, world!";
+}
+
+function functionB() {
+    return "Hello, universe!";
+}
+
+const similarity = pf.compareFunctionSimilarity(functionA, functionB);
+console.log(`Function similarity: ${similarity}`);
+
+// Example usage:
+const similarityJaccard = pf.jaccardSimilarity("hello", "hola");
+console.log(`Jaccard Similarity: ${similarityJaccard}`);
+
+// Example usage:
+const queries = ["natural language processing", "machine learning"];
+const documents = [
+    "Natural language processing is a field of study in machine learning.",
+    "Machine learning algorithms are used in natural language processing.",
+    "Deep learning is a subset of machine learning.",
+    "Text analysis and data processing are important in NLP."
+];
+
+const similarities = pf.latentSemanticAnalysis(queries, documents);
+console.log(similarities);
+
+// Example usage:
+const sequence = pf.createRandomArray(100,0,100)
+const windowSize = 3; // Adjust the window size as needed
+
+const { y_true, y_pred } = pf.predictNextNumbers(sequence, windowSize);
+
+console.log(pf.meanSquaredError(y_pred.slice(-(y_true.length)),y_true),'MEAN SQUARED ERROR')
+console.log(pf.rootMeanSquaredError(y_pred.slice(-(y_true.length)),y_true),'ROOT MEAN SQUARED ERROR')
+console.log(pf.recursiveMathOperation(op='sum',1,2,3,4))
+console.log(pf.performMathOperation('sum',y_pred))
+console.log(pf.performMathOperation('sum',y_true))
+
+const learningRate = 0.01; // Learning rate for gradient descent
+const iterations = 100; // Number of optimization iterations
+
+const optimizedPredictions = pf.predicNumLearning(sequence, windowSize, learningRate, iterations);
+console.log(optimizedPredictions.length,sequence.length)
+
+console.log(pf.meanAbsoluteError(optimizedPredictions,sequence),'ABSOLUTE ERROR')
+console.log(pf.meanSquaredError(optimizedPredictions,sequence),'MEAN SQUARED ERROR')
+console.log(pf.relativeSquaredError(optimizedPredictions,sequence),'RELATIVE SQUARED ERROR')
+
+
+// Example data: List of students with grades and scores
+const students = [
+    { name: "Alice", grade: "A", score: 95 },
+    { name: "Bob", grade: "B", score: 85 },
+    { name: "Charlie", grade: "A", score: 90 },
+    { name: "David", grade: "C", score: 75 },
+    { name: "Eve", grade: "B", score: 88 },
+];
+
+// Create a new instance of the GroupBy class and pass in the data
+const grouper = new pf.groupBy(students);
+
+// Group the data by the "grade" property
+grouper.by(student => student.grade);
+
+// Calculate the mean "score" for each grade group
+const meanScoresByGrade = grouper.mean();
+const modeScoresByGrade = grouper.mode();
+const medianScoresByGrade = grouper.median()
+const rangeScoreByGrade = grouper.range()
+const stdScoreByGrade = grouper.standardDeviation()
+
+console.log(meanScoresByGrade);
+console.log(modeScoresByGrade);
+console.log(medianScoresByGrade)
+console.log(rangeScoreByGrade)
+console.log(stdScoreByGrade)
+
+// Example API response with nested objects and arrays
+const apiResponse = {
+    data: [
+        {
+            name: 'John Doe',
+            age: 30,
+            scores: [95, 88, 75]
+        },
+        {
+            name: 'Jane Smith',
+            age: 28,
+            scores: [90, 85, 78]
+        }
+    ]
+};
+
+// Call the function with the API response
+const largestNode = pf.enhanceApiResponse(apiResponse);
+
+// Print the largest node
+console.log(largestNode);
+
+// Example 1: Nested Objects
+const apiResponse1 = {
+    user: {
+        name: 'John Doe',
+        age: 30,
+        address: {
+            street: '123 Main St',
+            city: 'Exampleville'
+        }
+    },
+    orders: [
+        { id: 1, total: 50 },
+        { id: 2, total: 75 },
+        { id: 3, total: 100 }
+    ]
+};
+
+const largestNode1 = pf.enhanceApiResponse(apiResponse1);
+console.log('Example 1 - Largest Node:', largestNode1);
+
+// Example 2: Arrays of Objects
+const apiResponse2 = [
+    {
+        name: 'Item 1',
+        details: {
+            description: 'Description for Item 1',
+            price: 25
+        }
+    },
+    {
+        name: 'Item 2',
+        details: {
+            description: 'Description for Item 2',
+            price: 30
+        }
+    },
+    {
+        name: 'Item 3',
+        details: {
+            description: 'Description for Item 3',
+            price: 20
+        }
+    }
+];
+
+const largestNode2 = pf.enhanceApiResponse(apiResponse2);
+console.log('Example 2 - Largest Node:', largestNode2);
+
+// Example 3: Deeply Nested Objects
+const apiResponse3 = {
+    level1: {
+        level2: {
+            level3: {
+                data: 'Deeply Nested Data'
+            }
+        }
+    }
+};
+
+const largestNode3 = pf.enhanceApiResponse(apiResponse3);
+console.log('Example 3 - Largest Node:', largestNode3);
+
+
 ```
 
 

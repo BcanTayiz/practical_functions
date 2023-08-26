@@ -60,6 +60,7 @@ const arrayCreation = require('./arrayCreation')
 const count = require('./count')
 const similarity = require('./similarity')
 const weirdPrediction = require('./weirdPrediction')
+const enchancedData = require('./enchanedData')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -70,6 +71,7 @@ module.exports = {
     isNumeric:checkValue.isNumeric,
     isValidDate:checkValue.isValidDate,
     isEmptyObject:checkValue.isEmptyObject,
+    enhanceApiResponse:enchancedData.enhanceApiResponse,
     filterUnique:filter.filterUnique,
     compareLists:filter.compareLists,
     substring: stringCompare.substring,
