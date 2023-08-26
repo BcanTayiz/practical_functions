@@ -95,6 +95,7 @@ module.exports = {
     mergeObjects:aggregate.mergeObjects,
     createObjectFromLists:aggregate.createObjectFromLists,
     combineAndFlattenLists:aggregate.combineAndFlattenLists,
+    groupBy:aggregate.GroupBy,
     fileToArray:fileToArray.filesToArray,
     makeid:idCreate.makeid,
     randomRange:randomGen.randomRange,
