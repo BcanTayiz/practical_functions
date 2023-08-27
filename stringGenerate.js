@@ -10,6 +10,28 @@ function generateRandomString(length) {
     return randomString;
   }
 
+  function countWords(text) {
+    // Split the text into words by spaces and punctuation marks
+    const words = text.split(/\s+|[,.;?!()]+/);
+    
+    // Create an object to store word counts
+    const wordCounts = {};
+
+    // Count the occurrences of each word
+    words.forEach(word => {
+        // Remove leading and trailing punctuation and convert to lowercase
+        const cleanedWord = word.replace(/^[.,;?!()]+|[.,;?!()]+$/g, '').toLowerCase();
+        
+        if (cleanedWord) { // Check if the word is not empty
+            wordCounts[cleanedWord] = (wordCounts[cleanedWord] || 0) + 1;
+        }
+    });
+
+    return wordCounts;
+}
+
+
 module.exports = {
-    generateRandomString:generateRandomString
+    generateRandomString:generateRandomString,
+    countWords:countWords
 }

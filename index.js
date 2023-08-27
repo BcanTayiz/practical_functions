@@ -206,6 +206,7 @@ module.exports = {
     getFilesWithExtension:changeFolder.getFilesWithExtension,
     removeEmptyDirectories:changeFolder.removeEmptyDirectories,
     generateRandomString:generateString.generateRandomString,
+    countWords:generateString.countWords,
     customCompress:compress.customCompress,
     customDecompress:compress.customDecompress,
     compressJSON:compress.compressJSON,

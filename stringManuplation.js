@@ -14,9 +14,9 @@ function replaceWordsInText(text, replacementObject, caseSensitive = true) {
         return match; // If no match is found, preserve the original word
     };
 
-    // Create a regular expression with the specified flags
+    // Create a regular expression with the specified flags to match whole words
     const regexFlags = caseSensitive ? 'g' : 'gi';
-    const regex = new RegExp(Object.keys(replacementObject).join('|'), regexFlags);
+    const regex = new RegExp(`\\b(${Object.keys(replacementObject).join('|')})\\b`, regexFlags);
 
     // Replace matched words with their corresponding values from the object while preserving case
     const replacedText = text.replace(regex, replaceFn);

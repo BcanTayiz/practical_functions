@@ -1775,6 +1775,42 @@ const modText2 = pf.replaceWordsInText(textToModify,replacements,true)
 console.log(modifiedText); // Output: "Hi Universe, this is a Example."
 console.log(modText2)
 
+const exampleText = `In no impression assistance contrasted. Manners she wishing justice hastily new anxious.
+ At discovery discourse departure objection we. Few extensive add delighted tolerably sincerity her. 
+ Law ought him least enjoy decay one quick court.
+ Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.
+Considered an invitation do introduced sufficient understood instrument it. Of decisively friendship in as collecting at.
+ No affixed be husband ye females brother garrets proceed. Least child who seven happy yet balls young. 
+ Discovery sweetness principle discourse shameless bed one excellent. 
+ Sentiments of surrounded friendship dispatched connection is he. 
+ Me or produce besides hastily up as pleased. Bore less when had and john shed hope.`
+
+
+
+const replacements2 = {
+    no:'but, yess aam, whatelse ?',
+    she:"Angel",
+    do:"can be done earlier",
+    in:"out",
+    produce:"be dj about it",
+    principle:"Something I repeat like parrot",
+    Angel:"pays bills",
+    be:"whatever it will be, will be"
+};
+
+const modifiedTextLyrics = pf.replaceWordsInText(exampleText, replacements2, false); // Case-insensitive for both keys and values
+const modText2Lyrics = pf.replaceWordsInText(modifiedTextLyrics,replacements2,true)
+console.log("----------- String 1 Example -----------")
+console.log(modifiedTextLyrics); // Output: "Hi Universe, this is a Example."
+console.log("----------- String 2 Example -----------")
+console.log(modText2Lyrics)
+
+
+console.log("------- Count Words --------")
+console.log(pf.countWords(modText2Lyrics))
+console.log("------- Count Words --------")
+
+
 
 ```
 
