@@ -62,6 +62,7 @@ const similarity = require('./similarity')
 const weirdPrediction = require('./weirdPrediction')
 const enchancedData = require('./enchanedData')
 const subsets = require('./subsets')
+const htmlReturn = require('./htmlReturn')
 
 module.exports = {
     checkValue: checkValue.checkValue,
@@ -117,7 +118,9 @@ module.exports = {
     reduceValObjList:changeObjects.reduceValObjList,
     changeKeyValues:changeObjects.changeKeyValues,
     listReducer : reduceList.listReducer,
+    customListReducer: reduceList.customListReducer,
     replaceAt:stringManuplation.replaceAt,
+    replaceWordsInText:stringManuplation.replaceWordsInText,
     filterStringsByTerm:stringSearch.filterStringsByTerm,
     swapArrayElements:arrayManuplation.swapArrayElements,
     rotateArray:arrayManuplation.rotateArray,
@@ -297,6 +300,9 @@ module.exports = {
     predicNumLearning:weirdPrediction.predicNumLearning,
     generateSubsets:subsets.generateSubsets,
     generateNLengthSubsets:subsets.generateNLengthSubsets,
+    subsetsWithSum:subsets.subsetsWithSum,
+    subsetsWithProduct:subsets.subsetsWithProduct,
+    createHTMLElements:htmlReturn.createHTMLElements
 };
 
 

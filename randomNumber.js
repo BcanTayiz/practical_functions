@@ -56,9 +56,10 @@ function createRandomList(length, min, max) {
 
 
 
+
 module.exports = {
     randomRange: randomRange,
     shuffleArrayRandom:shuffleArrayRandom,
     getRandomItemsFromArray:getRandomItemsFromArray,
-    createRandomList:createRandomList
+    createRandomList:createRandomList,
 };

@@ -24,9 +24,9 @@
 * This project supports you while you can consider other problems,
 ---
 
-![Travis Status](https://img.shields.io/travis/:BcanTayiz/:practical_functions)
-![NPM Downloads](https://img.shields.io/npm/dw/:practical_functions)
-![NPM License](https://img.shields.io/npm/l/:practical_functions)
+[![Travis Status](https://img.shields.io/travis/:BcanTayiz/:practical_functions)](https://travis-ci.org/:BcanTayiz/:practical_functions)
+[![NPM Downloads](https://img.shields.io/npm/dw/:practical_functions)](https://www.npmjs.com/package/:practical_functions)
+[![NPM License](https://img.shields.io/npm/l/:practical_functions)](https://github.com/:BcanTayiz/:practical_functions/ LICENSE)
 [![Twitter](https://img.shields.io/twitter/follow/:iz_apps.svg?style=social&label=@:iz_apps)](https://twitter.com/:iz_apps)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-orange?style=for-the-badge&logo=ko-fi)](https://www.buymeacoffee.com/codermakerv)
 
@@ -1711,6 +1711,70 @@ const inputArray2 = [1, 2, 3, 4];
 const subsetLength = 2;
 const nLengthSubsets = pf.generateNLengthSubsets(inputArray2, subsetLength);
 console.log(nLengthSubsets);
+
+// Example usage:
+const inputArray3 = [2, 4, 6, 8];
+const targetSum = 10;
+const result = pf.subsetsWithSum(inputArray3, targetSum);
+console.log(result);
+
+// Example usage:
+const inputArrayProduct = [2, 3, 5, 7];
+const targetProduct = 30;
+const resultProduct = pf.subsetsWithProduct(inputArrayProduct, targetProduct);
+console.log(resultProduct);
+
+// Example custom reduction function (sum of squares)
+function sumOfSquaresReducer(total, num) {
+    return total + num * num;
+}
+
+const array = [1, 2, 3, 4, 5];
+const resultCustom = pf.customListReducer(array, sumOfSquaresReducer);
+console.log(resultCustom); // Outputs: 55 (1^2 + 2^2 + 3^2 + 4^2 + 5^2)
+
+// Example custom reduction function (calculate total price of products)
+function totalPriceReducer(total, product) {
+    return total + product.price;
+}
+
+// Array of products
+const products = [
+    { name: 'Product A', price: 10 },
+    { name: 'Product B', price: 20 },
+    { name: 'Product C', price: 15 },
+    { name: 'Product D', price: 25 },
+];
+
+// Calculate the total price of products using customListReducer
+const totalPrice = pf.customListReducer(products, totalPriceReducer);
+console.log('Total Price:', totalPrice); // Outputs: 70 (10 + 20 + 15 + 25)
+
+// Example usage:
+const linkData = ['Link 1', 'Link 2', 'Link 3'];
+const listData = ['Item 1', 'Item 2', 'Item 3'];
+
+const links = pf.createHTMLElements('a', linkData);
+const listItems = pf.createHTMLElements('li', listData);
+
+console.log(links);
+console.log(listItems);
+
+// Example usage:
+const textToModify = "Hello world, this is a test.";
+const replacements = {
+    World: "Universe",
+    test: "Example",
+    hello: "Hi",
+    This: "no"
+};
+
+const modifiedText = pf.replaceWordsInText(textToModify, replacements, false); // Case-insensitive for both keys and values
+const modText2 = pf.replaceWordsInText(textToModify,replacements,true)
+
+console.log(modifiedText); // Output: "Hi Universe, this is a Example."
+console.log(modText2)
+
 
 ```
 

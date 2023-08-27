@@ -39,8 +39,70 @@ function generateNLengthSubsets(arr, n) {
     return subsets;
 }
 
+function subsetsWithSum(arr, targetSum) {
+    const subsets = [];
+
+    function backtrack(start, currentSubset, currentSum) {
+        if (currentSum === targetSum) {
+            subsets.push([...currentSubset]);
+            return;
+        }
+        if (currentSum > targetSum || start === arr.length) {
+            return;
+        }
+
+        for (let i = start; i < arr.length; i++) {
+            currentSubset.push(arr[i]);
+            currentSum += arr[i];
+            backtrack(i + 1, currentSubset, currentSum);
+            currentSubset.pop();
+            currentSum -= arr[i];
+        }
+    }
+
+    backtrack(0, [], 0);
+
+    return subsets;
+}
+
+function subsetsWithProduct(arr, targetProduct) {
+    const subsets = [];
+
+    function backtrack(start, currentSubset, currentProduct) {
+        if (currentProduct === targetProduct) {
+            subsets.push([...currentSubset]);
+            return;
+        }
+        if (currentProduct > targetProduct || start === arr.length) {
+            return;
+        }
+
+        for (let i = start; i < arr.length; i++) {
+            currentSubset.push(arr[i]);
+            currentProduct *= arr[i];
+            backtrack(i + 1, currentSubset, currentProduct);
+            currentSubset.pop();
+            currentProduct /= arr[i];
+        }
+    }
+
+    backtrack(0, [], 1);
+
+    return subsets;
+}
+
+// Example usage:
+const inputArray = [2, 3, 5, 7];
+const targetProduct = 30;
+const result = subsetsWithProduct(inputArray, targetProduct);
+console.log(result);
+
+
+
 
 module.exports = {
     generateSubsets:generateSubsets,
-    generateNLengthSubsets:generateNLengthSubsets
+    generateNLengthSubsets:generateNLengthSubsets,
+    subsetsWithSum:subsetsWithSum,
+    subsetsWithProduct:subsetsWithProduct,
 }
