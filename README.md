@@ -24,11 +24,15 @@
 * This project supports you while you can consider other problems,
 ---
 
-[![Travis Status](https://img.shields.io/travis/:BcanTayiz/:practical_functions)](https://travis-ci.org/:BcanTayiz/:practical_functions)
-[![NPM Downloads](https://img.shields.io/npm/dw/:practical_functions)](https://www.npmjs.com/package/:practical_functions)
-[![NPM License](https://img.shields.io/npm/l/:practical_functions)](https://github.com/:BcanTayiz/:practical_functions/ LICENSE)
-[![Twitter](https://img.shields.io/twitter/follow/:iz_apps.svg?style=social&label=@:iz_apps)](https://twitter.com/:iz_apps)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-orange?style=for-the-badge&logo=ko-fi)](https://www.buymeacoffee.com/codermakerv)
+
+[![Travis Status](https://img.shields.io/travis/BcanTayiz/practical_functions)](https://travis-ci.org/BcanTayiz/practical_functions)
+[![NPM Downloads](https://img.shields.io/npm/dw/practical_functions)](https://www.npmjs.com/package/practical_functions)
+[![NPM License](https://img.shields.io/npm/l/practical_functions)](https://github.com/BcanTayiz/practical_functions/LICENSE.txt)
+[![NPM Version](https://img.shields.io/npm/v/practical_functions)](https://www.npmjs.com/package/practical_functions)
+![Package Size](https://img.shields.io/bundlephobia/min/practical_functions)
+
+[![Twitter](https://img.shields.io/twitter/follow/iz_apps.svg?style=social&label=@iz_apps)](https://twitter.com/iz_apps)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-orange?style=for-the-badge&logo=ko-fi)](https://www.buymeacoffee.com/codermakerv) 
 
 ---
 # Usage of Functions
