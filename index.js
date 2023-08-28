@@ -63,8 +63,12 @@ const weirdPrediction = require('./weirdPrediction')
 const enchancedData = require('./enchanedData')
 const subsets = require('./subsets')
 const htmlReturn = require('./htmlReturn')
+const booleanAlgeb  =require('./booleanAlgeb')
+const fuzzySystem = require('./fuzzyLogic')
 
 module.exports = {
+    booleanOperation:booleanAlgeb.booleanOperation,
+    calculateBooleanAlgebra:booleanAlgeb.calculateBooleanAlgebra,
     checkValue: checkValue.checkValue,
     modulerCheck: checkValue.modulerCheck,
     checkArray:checkValue.checkArray,
@@ -78,6 +82,11 @@ module.exports = {
     findDataWithKeysByType:enchancedData.findDataWithKeysByType,
     filterUnique:filter.filterUnique,
     compareLists:filter.compareLists,
+    createFuzzyLogicSystem:fuzzySystem.createFuzzyLogicSystem,
+    centroidDefuzzification:fuzzySystem.centroidDefuzzification,
+    fuzzyAND:fuzzySystem.fuzzyAND,
+    fuzzify:fuzzySystem.fuzzify,
+    fuzzyOperation:fuzzySystem.fuzzyOperation,
     substring: stringCompare.substring,
     deleteValues: deleteValues.deleteValues,
     removeDuplicatesByKey:deleteValues.removeDuplicatesByKey,
