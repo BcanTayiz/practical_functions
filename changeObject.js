@@ -159,7 +159,8 @@ function changeKeyValues(list, keyToChange, newValue) {
 }
 
 function enrichObjSelData(existingData, objects, selectedKeys) {
-    existingData.map((obj,index) => {
+    const data = [...existingData];
+    data.map((obj,index) => {
         for(let i=0;i<selectedKeys.length;i++){
             if(index > objects.length){
                 break
@@ -172,7 +173,7 @@ function enrichObjSelData(existingData, objects, selectedKeys) {
         }
     })
 
-    return existingData
+    return data
   }
 
   function populateListOfObj(objects, n) {
