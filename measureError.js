@@ -3,7 +3,6 @@ function meanSquaredError(yTrue, yPred) {
         throw new Error('Input arrays must have the same length');
     }
     const n = yTrue.length;
-    console.log(n)
     let sum = 0;
     for (let i = 0; i < n; i++) {
         sum += Math.pow(yTrue[i] - yPred[i], 2);

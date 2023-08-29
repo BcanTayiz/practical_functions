@@ -158,7 +158,48 @@ function changeKeyValues(list, keyToChange, newValue) {
     return updatedList;
 }
 
+function enrichObjSelData(existingData, objects, selectedKeys) {
+    existingData.map((obj,index) => {
+        for(let i=0;i<selectedKeys.length;i++){
+            if(index > objects.length){
+                break
+            }
+            try{
+                obj[selectedKeys[i]] = objects[index][selectedKeys[i]]
+            }catch{
+                
+            }
+        }
+    })
 
+    return existingData
+  }
+
+  function populateListOfObj(objects, n) {
+    const populatedObjects = [...objects];
+  
+    for (let i = 0; i < n; i++) {
+      const newObj = {};
+  
+      Object.keys(objects[0]).forEach(key => {
+        if (key === 'id') {
+          const lastId = populatedObjects[populatedObjects.length - 1][key] || 0;
+          newObj[key] = lastId + 1;
+        } else if (typeof objects[0][key] === 'number') {
+          newObj[key] = Math.floor(Math.random() * 100); // Generate random number
+        } else if (typeof objects[0][key] === 'string') {
+          newObj[key] = Math.random().toString(36).substring(2, 15); // Generate random string
+        } else {
+          // Handle other data types here if needed
+        }
+      });
+  
+      populatedObjects.push(newObj);
+    }
+  
+    return populatedObjects;
+  }
+  
 
 module.exports = {
     alterObjectValues:alterObjectValues,
@@ -168,5 +209,7 @@ module.exports = {
     concatenateObjectValues:concatenateObjectValues,
     extractNumObjList:extractNumObjList,
     reduceValObjList:reduceValObjList,
-    changeKeyValues:changeKeyValues
+    changeKeyValues:changeKeyValues,
+    enrichObjSelData:enrichObjSelData,
+    populateListOfObj:populateListOfObj
 }

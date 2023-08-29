@@ -32,7 +32,7 @@
 ![Package Size](https://img.shields.io/bundlephobia/min/practical_functions)
 
 [![Twitter](https://img.shields.io/twitter/follow/iz_apps.svg?style=social&label=@iz_apps)](https://twitter.com/iz_apps)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Donate-orange?style=for-the-badge&logo=ko-fi)](https://www.buymeacoffee.com/codermakerv) 
+
 
 ---
 # Usage of Functions

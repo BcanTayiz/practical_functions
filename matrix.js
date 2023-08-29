@@ -27,7 +27,6 @@ function prettyPrintMatrix(matrix) {
         for (let j = 0; j < matrix[i].length; j++) {
             row += matrix[i][j] + '\t'; // Use '\t' for tab spacing between columns
         }
-        console.log(row);
     }
 }
 

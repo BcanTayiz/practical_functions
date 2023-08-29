@@ -45,6 +45,10 @@
     "url": "https://github.com/BcanTayiz/practical_functions/issues"
   },
   "homepage": "https://github.com/BcanTayiz/practical_functions#readme",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/practical_functions"
+  },
   "dependencies": {
     "csv-parser": "^3.0.0",
     "decimal.js": "^10.4.3",

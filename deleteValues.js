@@ -56,9 +56,19 @@ function removeDuplicatesByKey(arr, key) {
     return newArr;
 }
 
+function deleteAllMatching(arr, valueToDelete) {
+    return arr.filter(item => item !== valueToDelete);
+  }
+
+function deleteValuesOutOfRange(arr, lowerBound, upperBound) {
+return arr.filter(item => item >= lowerBound && item <= upperBound);
+}
+
 
 
 module.exports = {
     deleteValues:deleteValues,
-    removeDuplicatesByKey:removeDuplicatesByKey
+    removeDuplicatesByKey:removeDuplicatesByKey,
+    deleteAllMatching:deleteAllMatching,
+    deleteValuesOutOfRange:deleteValuesOutOfRange
 };
