@@ -65,8 +65,11 @@ const subsets = require('./subsets')
 const htmlReturn = require('./htmlReturn')
 const booleanAlgeb  =require('./booleanAlgeb')
 const fuzzySystem = require('./fuzzyLogic')
+const htmlPrint = require('./htmlPrint')
 
 module.exports = {
+    logHTMLVisual:htmlPrint.logHTMLVisual,
+    openHTMLInBrowser:htmlPrint.openHTMLInBrowser,
     booleanOperation:booleanAlgeb.booleanOperation,
     calculateBooleanAlgebra:booleanAlgeb.calculateBooleanAlgebra,
     checkValue: checkValue.checkValue,

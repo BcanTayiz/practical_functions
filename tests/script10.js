@@ -63,3 +63,13 @@ const existingData = [
   const populatedObjects = pf.populateListOfObj(templateObjects, n);
   
   console.log(populatedObjects);
+
+// Example usage:
+const htmlContent = '<html><body><h1>Hello, World!</h1></body></html>';
+const folderName = 'screenshots'; // Specify the desired folder name
+const fileName = 'screenshot.png'; // Specify the desired file name and extension
+pf.logHTMLVisual(htmlContent, folderName, fileName);
+
+// Example usage:
+const htmlContentNew = '<html><body><h1>Hello, World!</h1></body></html>';
+pf.openHTMLInBrowser(htmlContentNew);
