@@ -197,6 +197,12 @@ function findLCMOfArray(numbers) {
     return lcm;
 }
 
+function productArray(list){
+    let product = list.reduce((a,b) => a*b)
+    let total_list = list.map((value) => product * (1/value))
+    return total_list
+}
+
 module.exports = {
     calculatePi:calculatePi,
     calculateArea:calculateArea,
@@ -216,5 +222,6 @@ module.exports = {
     gcd:gcd,
     genRandPointCircle:genRandPointCircle,
     divEqParts:divEqParts,
-    findLCMOfArray:findLCMOfArray
+    findLCMOfArray:findLCMOfArray,
+    productArray:productArray
 }

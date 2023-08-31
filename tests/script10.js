@@ -68,8 +68,18 @@ const existingData = [
 const htmlContent = '<html><body><h1>Hello, World!</h1></body></html>';
 const folderName = 'screenshots'; // Specify the desired folder name
 const fileName = 'screenshot.png'; // Specify the desired file name and extension
-pf.logHTMLVisual(htmlContent, folderName, fileName);
+//pf.logHTMLVisual(htmlContent, folderName, fileName);
 
 // Example usage:
 const htmlContentNew = '<html><body><h1>Hello, World!</h1></body></html>';
-pf.openHTMLInBrowser(htmlContentNew);
+//pf.openHTMLInBrowser(htmlContentNew);
+
+
+// Example usage:
+let array = [1,2,3,4,5]
+console.log(pf.productArray(array))
+
+let array2 = pf.shuffleArrayRandom(pf.getNumbers(2,10))
+console.log(array2)
+console.log(pf.productArray(array2))
+

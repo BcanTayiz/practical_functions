@@ -185,6 +185,7 @@ module.exports = {
     divEqParts:mathPractical.divEqParts,
     genRandPointCircle:mathPractical.genRandPointCircle,
     findLCMOfArray:mathPractical.findLCMOfArray,
+    productArray:mathPractical.productArray,
     performArrayOperation:mathOperations.performArrayOperation,
     polygonArea:mathOperations.polygonArea,
     moduleNegative:mathOperations.moduleNegative,
