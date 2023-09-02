@@ -83,3 +83,26 @@ let array2 = pf.shuffleArrayRandom(pf.getNumbers(2,10))
 console.log(array2)
 console.log(pf.productArray(array2))
 
+
+// Example usage with multiple keys:
+const arrayOfObjects = [
+  { name: "Alice", age: 25, city: "New York" },
+  { name: "Bob", age: 30, city: "San Francisco" },
+  { name: "Charlie", age: 25, city: "Los Angeles" },
+  { name: "David", age: 35, city: "New York" },
+  { name: "Eve", age: 30, city: "San Francisco" },
+];
+
+const keys = ["age"];
+
+const result = pf.extractValuesByKeys(arrayOfObjects, keys);
+console.log(result);
+
+const keys2 = ["age","name"];
+
+const result2 = pf.extractValuesByKeys(arrayOfObjects, keys2);
+console.log(result2);
+
+
+
+

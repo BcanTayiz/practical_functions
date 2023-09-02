@@ -66,8 +66,10 @@ const htmlReturn = require('./htmlReturn')
 const booleanAlgeb  =require('./booleanAlgeb')
 const fuzzySystem = require('./fuzzyLogic')
 const htmlPrint = require('./htmlPrint')
+const objectManuplation = require('./objectManuplation')
 
 module.exports = {
+    extractValuesByKeys:objectManuplation.extractValuesByKeys,
     logHTMLVisual:htmlPrint.logHTMLVisual,
     openHTMLInBrowser:htmlPrint.openHTMLInBrowser,
     booleanOperation:booleanAlgeb.booleanOperation,
