@@ -1,3 +1,4 @@
+
 function randomRange(min,max,round=2){
     x = Math.random() * (max - min) + min;
     return Math.round(x*Math.pow(10,round)) / Math.pow(10,round)

@@ -76,6 +76,24 @@ function createBinsFromArray(dataArray, numBins) {
     return bins;
 }
 
+function createArrFromObjCount(keysCountObject) {
+    if (typeof keysCountObject !== 'object') {
+      throw new Error('Invalid input. Please provide an object with keys and counts.');
+    }
+  
+    const resultArray = [];
+  
+    for (const key in keysCountObject) {
+      if (Number.isInteger(keysCountObject[key]) && keysCountObject[key] >= 0) {
+        for (let i = 0; i < keysCountObject[key]; i++) {
+          resultArray.push(key);
+        }
+      }
+    }
+  
+    return resultArray;
+  }
+
 
 
 
@@ -92,5 +110,6 @@ module.exports = {
     create2DArray:create2DArray,
     createSubarrays:createSubarrays,
     createRandomArrayFromList:createRandomArrayFromList,
-    createBinsFromArray:createBinsFromArray
+    createBinsFromArray:createBinsFromArray,
+    createArrFromObjCount:createArrFromObjCount,
 }

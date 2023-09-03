@@ -1,3 +1,7 @@
+const {toFixedNum} =  require('./mathPractical')
+const {randomRange} = require('./randomNumber')
+
+
 function swapArrayElements(array, index1, index2) {
     if (!Array.isArray(array)) {
         throw new Error('Input is not an array');
@@ -85,10 +89,136 @@ function flattenArray(arr) {
   return result;
 }
 
+function addNoiseToArray(arr, noiseLevel,toFixedLevel=2) {
+  if (!Array.isArray(arr) || typeof noiseLevel !== 'number' || noiseLevel < 0 || noiseLevel > 100) {
+    throw new Error('Invalid input. Please provide an array and a noise level between 0 and 100.');
+  }
+
+  // Calculate the noise range based on the noise level
+  const minNoise = -noiseLevel / 200; // Half of the noise level as a fraction
+  const maxNoise = noiseLevel / 200; // Half of the noise level as a fraction
+
+  // Create a new array with noisy values
+  const noisyArray = arr.map((value) => {
+    // Generate random noise within the calculated range
+    const noise = minNoise + Math.random() * (maxNoise - minNoise);
+    // Apply the noise to the original value
+    const noisyValue = value + value * noise;
+    return toFixedNum(noisyValue,toFixedLevel)
+  });
+
+  return noisyArray;
+}
+
+function smoothAndRemoveNoise(arr, smoothingFactor,toFixedLevel=2) {
+  if (!Array.isArray(arr) || typeof smoothingFactor !== 'number' || smoothingFactor < 0 || smoothingFactor > 1) {
+    throw new Error('Invalid input. Please provide an array and a smoothing factor between 0 and 1.');
+  }
+
+  const smoothedArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const prevValue = smoothedArray[i - 1] || arr[i];
+    const nextValue = arr[i + 1] || arr[i];
+    const smoothedValue = arr[i] + smoothingFactor * (prevValue + nextValue - 2 * arr[i]);
+    smoothedArray.push(toFixedNum(smoothedValue,toFixedLevel));
+  }
+
+  return smoothedArray;
+}
+
+function reverseNoiseSmooth(arr, noiseLevel, smoothingFactor,toFixedLevel=2) {
+  const denoisedArray = smoothAndRemoveNoise(arr, smoothingFactor);
+  const minNoise = -noiseLevel / 200;
+  const maxNoise = noiseLevel / 200;
+
+  const originalArray = denoisedArray.map((value) => {
+    const noise = minNoise + Math.random() * (maxNoise - minNoise);
+    const originalValue = value / (1 + noise);
+    return toFixedNum(originalValue,toFixedLevel);
+  });
+
+  return originalArray;
+}
+
+
+function fillArrayToRange(arr, minValue, maxValue) {
+  if (!Array.isArray(arr) || typeof minValue !== 'number' || typeof maxValue !== 'number' || minValue >= maxValue) {
+    throw new Error('Invalid input. Please provide an array, a minimum value, and a maximum value.');
+  }
+
+  const adjustedArray = [...arr];
+
+  // Helper function to generate a random number within a specified range
+  function randomRange(min, max, decimals) {
+    return +(min + Math.random() * (max - min)).toFixed(decimals);
+  }
+
+  // Add or subtract values to the array to ensure it stays within the specified range
+  for (let i = 0; i < adjustedArray.length; i++) {
+    let value = adjustedArray[i];
+
+    if (typeof value !== 'number') {
+      throw new Error('Array contains non-numeric values.');
+    }
+
+    if (value < minValue) {
+      while (adjustedArray[i] < minValue) {
+        const difference = randomRange(value, minValue, 2);
+        adjustedArray[i] += difference;
+        adjustedArray[i] = parseFloat(adjustedArray[i].toFixed(2)); // Ensure two decimal places
+      }
+    } else if (value > maxValue) {
+      while (adjustedArray[i] > maxValue) {
+        const difference = randomRange(maxValue, value, 2);
+        adjustedArray[i] -= difference;
+        adjustedArray[i] = parseFloat(adjustedArray[i].toFixed(2)); // Ensure two decimal places
+      }
+    }
+  }
+
+  return adjustedArray;
+}
+
+function adjustArrayToRange(arr, minValue, maxValue) {
+  if (!Array.isArray(arr) || typeof minValue !== 'number' || typeof maxValue !== 'number' || minValue >= maxValue) {
+    throw new Error('Invalid input. Please provide an array, a minimum value, and a maximum value.');
+  }
+
+  const adjustedArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const value = arr[i];
+
+    if (typeof value !== 'number') {
+      throw new Error('Array contains non-numeric values.');
+    }
+
+    let adjustedValue = value;
+
+    // Ensure the value is within the specified range
+    if (value < minValue) {
+      adjustedValue = minValue;
+    } else if (value > maxValue) {
+      adjustedValue = maxValue;
+    }
+
+    adjustedArray.push(adjustedValue);
+  }
+
+  return adjustedArray;
+}
+
+
 module.exports={
     swapArrayElements:swapArrayElements,
     rotateArray:rotateArray,
     chunkArray:chunkArray,
     arrayToMatrix:arrayToMatrix,
-    flattenArray:flattenArray
+    flattenArray:flattenArray,
+    addNoiseToArray:addNoiseToArray,
+    smoothAndRemoveNoise:smoothAndRemoveNoise,
+    reverseNoiseSmooth:reverseNoiseSmooth,
+    fillArrayToRange:fillArrayToRange,
+    adjustArrayToRange:adjustArrayToRange,
 }

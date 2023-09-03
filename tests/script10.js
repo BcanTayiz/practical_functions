@@ -104,5 +104,48 @@ const result2 = pf.extractValuesByKeys(arrayOfObjects, keys2);
 console.log(result2);
 
 
+// Example usage:
+const originalArrayNoise = [10, 20, 30, 40];
+const noiseLevel = 10; // 10% noise level
+const noisyArray = pf.addNoiseToArray(originalArrayNoise, noiseLevel);
+console.log(noisyArray);
+
+const noiseLevel2 = 100; // 10% noise level
+const noisyArray2 = pf.addNoiseToArray(originalArrayNoise, noiseLevel2);
+console.log(noisyArray2);
+
+// Example usage:
+const originalArrayReverse = [10, 20, 30, 40];
+const noiseLevelReverse = 10; // 10% noise level
+const smoothingFactor = 0.2;
+const noisyArrayReverse = pf.addNoiseToArray(originalArrayReverse, noiseLevelReverse);
+const smoothedAndDenoisedArray = pf.smoothAndRemoveNoise(noisyArrayReverse, smoothingFactor);
+const reversedArray = pf.reverseNoiseSmooth(smoothedAndDenoisedArray, noiseLevel, smoothingFactor);
+
+console.log('Original Array:', originalArrayReverse);
+console.log('Noisy Array:', noisyArrayReverse);
+console.log('Smoothed and Denoised Array:', smoothedAndDenoisedArray);
+console.log('Reversed Array:', reversedArray);
+
+
+// Example usage:
+const inputArray = [2, 6, 12, 25, 30];
+const minValue = 0;
+const maxValue = 20;
+const adjustedArrayRandom = pf.fillArrayToRange(inputArray, minValue, maxValue);
+
+console.log(adjustedArrayRandom);
+const adjustedArray = pf.adjustArrayToRange(inputArray, minValue, maxValue);
+
+console.log(adjustedArray);
+
+
+// Example usage:
+const keysCountObject = { name: 3, age: 2, id: 1 };
+const newArrayCount = pf.createArrFromObjCount(keysCountObject);
+
+console.log(newArrayCount);
+
+
 
 

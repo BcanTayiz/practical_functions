@@ -49,8 +49,15 @@ function logBase(val,base) {
     return Math.log(val) / Math.log(base);
   }
 
-function roundX(num,round){
-    return Math.ceil(num / round) * round;
+function roundX(num,round,op='ceil'){
+    if(op=='ceil'){
+        return Math.ceil(num / round) * round;
+    }else if(op=='floor'){
+        return Math.floor(num / round) * round;
+    }else{
+        throw Error('Op Input must be floor or ceil')
+    }
+    
 }
 
 function customPad(num,base) {
@@ -203,6 +210,10 @@ function productArray(list){
     return total_list
 }
 
+function toFixedNum(x,level=2) {
+    return Number(Number.parseFloat(x).toFixed(level))
+  }
+
 module.exports = {
     calculatePi:calculatePi,
     calculateArea:calculateArea,
@@ -223,5 +234,6 @@ module.exports = {
     genRandPointCircle:genRandPointCircle,
     divEqParts:divEqParts,
     findLCMOfArray:findLCMOfArray,
-    productArray:productArray
+    productArray:productArray,
+    toFixedNum:toFixedNum
 }
