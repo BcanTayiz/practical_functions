@@ -67,8 +67,16 @@ const booleanAlgeb  =require('./booleanAlgeb')
 const fuzzySystem = require('./fuzzyLogic')
 const htmlPrint = require('./htmlPrint')
 const objectManuplation = require('./objectManuplation')
+const webKPIs = require('./webKPIs')
 
 module.exports = {
+    calculateWebsiteKPIs:webKPIs.calculateWebsiteKPIs,
+    calculateCAC:webKPIs.calculateCAC,
+    calculateCLV:webKPIs.calculateCLV,
+    calculateConversionFunnelMetrics:webKPIs.calculateConversionFunnelMetrics,
+    calculateROI:webKPIs.calculateROI,
+    calculateChurnRate:webKPIs.calculateChurnRate,
+    calculateTrafficSourcesBreakdown:webKPIs.calculateTrafficSourcesBreakdown,
     extractValuesByKeys:objectManuplation.extractValuesByKeys,
     logHTMLVisual:htmlPrint.logHTMLVisual,
     openHTMLInBrowser:htmlPrint.openHTMLInBrowser,

@@ -147,5 +147,73 @@ const newArrayCount = pf.createArrFromObjCount(keysCountObject);
 console.log(newArrayCount);
 
 
+// Example website data with additional elements
+const websiteData = {
+  totalVisitors: 10000,
+  uniqueVisitors: 8000,
+  pageViews: 30000,
+  bounceRate: 1500,
+  conversionRate: 500,
+  revenue: 5000,
+  averageSessionDuration: 2, // in minutes
+};
+
+// Calculate KPIs and ratios for the example data
+const KPIs = pf.calculateWebsiteKPIs(websiteData);
+
+// Output the KPIs and ratios to the console
+console.log(KPIs);
+
+// Sample website data
+const websiteDataMore = {
+  totalVisitors: 10000,
+  uniqueVisitors: 8000,
+  pageViews: 30000,
+  bounceRate: 1500,
+  conversionRate: 500,
+  revenue: 5000,
+  averageSessionDuration: 2, // in minutes
+  marketingCost: 2000,
+  conversions: 300,
+  productViews: 2000,
+  cartViews: 1000,
+  initialCustomers: 1000,
+  lostCustomers: 200,
+  organicTraffic: 4000,
+  paidTraffic: 2000,
+  referralTraffic: 1500,
+  directTraffic: 2500,
+};
+
+// Calculate Customer Acquisition Cost (CAC)
+const CAC = pf.calculateCAC(websiteDataMore, websiteDataMore.marketingCost);
+console.log('Customer Acquisition Cost (CAC): $' + CAC.toFixed(2));
+
+// Calculate Customer Lifetime Value (CLV)
+const CLV = pf.calculateCLV(websiteDataMore.revenue / websiteDataMore.conversions, 0.1); // Assuming a churn rate of 10%
+console.log('Customer Lifetime Value (CLV): $' + CLV.toFixed(2));
+
+// Calculate Conversion Funnel Metrics
+const funnelMetrics = pf.calculateConversionFunnelMetrics(websiteDataMore);
+console.log('Conversion Rate to Cart: ' + funnelMetrics.ConversionRateToCart.toFixed(2) + '%');
+console.log('Conversion Rate to Conversion: ' + funnelMetrics.ConversionRateToConversion.toFixed(2) + '%');
+console.log('Abandonment Rate: ' + funnelMetrics.AbandonmentRate.toFixed(2) + '%');
+
+// Calculate Return on Investment (ROI)
+const ROI = pf.calculateROI(websiteDataMore.revenue, websiteDataMore.marketingCost);
+console.log('Return on Investment (ROI): ' + ROI.toFixed(2) + '%');
+
+// Calculate Churn Rate
+const churnRate = pf.calculateChurnRate(websiteDataMore);
+console.log('Churn Rate: ' + churnRate.toFixed(2) + '%');
+
+// Calculate Traffic Sources Breakdown
+const trafficSourcesBreakdown = pf.calculateTrafficSourcesBreakdown(websiteDataMore);
+console.log('Organic Traffic Percentage: ' + trafficSourcesBreakdown.OrganicTrafficPercentage.toFixed(2) + '%');
+console.log('Paid Traffic Percentage: ' + trafficSourcesBreakdown.PaidTrafficPercentage.toFixed(2) + '%');
+console.log('Referral Traffic Percentage: ' + trafficSourcesBreakdown.ReferralTrafficPercentage.toFixed(2) + '%');
+console.log('Direct Traffic Percentage: ' + trafficSourcesBreakdown.DirectTrafficPercentage.toFixed(2) + '%');
+
+
 
 
