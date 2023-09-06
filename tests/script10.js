@@ -215,5 +215,26 @@ console.log('Referral Traffic Percentage: ' + trafficSourcesBreakdown.ReferralTr
 console.log('Direct Traffic Percentage: ' + trafficSourcesBreakdown.DirectTrafficPercentage.toFixed(2) + '%');
 
 
+// Example usage
+
+// Define the list of products
+const products = [
+  { name: "Product A", quality: 80, price: 50 },
+  { name: "Product B", quality: 90, price: 70 },
+  { name: "Product C", quality: 85, price: 60 },
+  // Add more products here
+];
+
+const desiredQuality = 85;
+const maxBudget = 150;
+const minQuality = 80;
+const maxQuality = 90;
+
+const purchasedProducts = pf.buyProducts(products, desiredQuality, maxBudget, minQuality, maxQuality);
+
+console.log("Purchased Products:");
+console.log(purchasedProducts);
+
+
 
 

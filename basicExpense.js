@@ -88,6 +88,32 @@ function calculateMonthlyCashFlow(spendings, earnings, data) {
 }
 
 
+// Function to buy products based on quality and budget constraints
+function buyProducts(productList, desiredQuality, maxBudget, minQuality, maxQuality) {
+  // Filter products by quality criteria
+  const filteredProducts = productList.filter((product) => {
+    return product.quality >= minQuality && product.quality <= maxQuality;
+  });
+
+  // Sort filtered products by price in ascending order
+  filteredProducts.sort((a, b) => a.price - b.price);
+
+  // Initialize variables for tracking purchased products and remaining budget
+  const purchasedProducts = [];
+  let remainingBudget = maxBudget;
+
+  // Iterate through the sorted list and buy products until the budget is exhausted
+  for (const product of filteredProducts) {
+    if (product.price <= remainingBudget) {
+      purchasedProducts.push(product);
+      remainingBudget -= product.price;
+    }
+  }
+
+  return purchasedProducts;
+}
+
+
   
 module.exports = {
     calculateFinancialSummary:calculateFinancialSummary,
@@ -96,4 +122,5 @@ module.exports = {
     calculateMonthlyAverageEarnings:calculateMonthlyAverageEarnings,
     determineProfitOrLoss:determineProfitOrLoss,
     calculateMonthlyCashFlow:calculateMonthlyCashFlow,
+    buyProducts:buyProducts,
 }

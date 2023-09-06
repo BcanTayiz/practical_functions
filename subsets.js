@@ -91,11 +91,6 @@ function subsetsWithProduct(arr, targetProduct) {
     return subsets;
 }
 
-// Example usage:
-const inputArray = [2, 3, 5, 7];
-const targetProduct = 30;
-const result = subsetsWithProduct(inputArray, targetProduct);
-console.log(result);
 
 
 

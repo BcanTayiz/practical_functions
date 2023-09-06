@@ -68,8 +68,10 @@ const fuzzySystem = require('./fuzzyLogic')
 const htmlPrint = require('./htmlPrint')
 const objectManuplation = require('./objectManuplation')
 const webKPIs = require('./webKPIs')
+const customLog = require('./customLog')
 
 module.exports = {
+    customConsoleLog:customLog.customConsoleLog,
     calculateWebsiteKPIs:webKPIs.calculateWebsiteKPIs,
     calculateCAC:webKPIs.calculateCAC,
     calculateCLV:webKPIs.calculateCLV,
@@ -316,6 +318,7 @@ module.exports = {
     calculateMonthlyAverageEarnings:basicExpense.calculateMonthlyAverageEarnings,
     determineProfitOrLoss:basicExpense.determineProfitOrLoss,
     calculateMonthlyCashFlow:basicExpense.calculateMonthlyCashFlow,
+    buyProducts:basicExpense.buyProducts,
     isPrime:primeNumbers.isPrime,
     generatePrimesInRange:primeNumbers.generatePrimesInRange,
     nthPrime:primeNumbers.nthPrime,
