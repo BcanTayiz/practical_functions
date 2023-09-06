@@ -209,6 +209,40 @@ function adjustArrayToRange(arr, minValue, maxValue) {
   return adjustedArray;
 }
 
+function signalReducer(data, n) {
+  if (data.length < n) {
+    throw new Error("Number of data points should be greater than or equal to n.");
+  }
+
+  if(typeof n == 'undefined'){
+    throw new Error("Please enter n number to reduce values")
+  }
+
+  // Calculate the segment size
+  const segmentSize = Math.floor(data.length / n);
+
+  // Initialize the array for the results
+  const results = [];
+
+  // Perform local regressions on each segment
+  for (let i = 0; i < n; i++) {
+    const start = i * segmentSize;
+    const end = (i === n - 1) ? data.length : (i + 1) * segmentSize;
+
+    // Extract the current segment
+    const segment = data.slice(start, end);
+
+    // Perform a local regression (e.g., moving average)
+    const segmentSum = segment.reduce((acc, value) => acc + value, 0);
+    const segmentAverage = segmentSum / segment.length;
+
+    // Store the result for this segment
+    results.push(segmentAverage);
+  }
+
+  return results;
+}
+
 
 module.exports={
     swapArrayElements:swapArrayElements,
@@ -221,4 +255,5 @@ module.exports={
     reverseNoiseSmooth:reverseNoiseSmooth,
     fillArrayToRange:fillArrayToRange,
     adjustArrayToRange:adjustArrayToRange,
+    signalReducer:signalReducer,
 }
