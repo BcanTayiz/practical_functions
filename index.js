@@ -160,6 +160,7 @@ module.exports = {
     adjustArrayToRange:arrayManuplation.adjustArrayToRange,
     smoothAndRemoveNoise:arrayManuplation.smoothAndRemoveNoise,
     reverseNoiseSmooth:arrayManuplation.reverseNoiseSmooth,
+    loessReducer:arrayManuplation.loessReducer,
     signalReducer:arrayManuplation.signalReducer,
     createArrayWithValues:arrayCreation.createArrayWithValues,
     createArrayWithValues:arrayCreation.createArrayWithValues,

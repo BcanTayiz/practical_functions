@@ -243,6 +243,45 @@ function signalReducer(data, n) {
   return results;
 }
 
+function loessReducer(data, m, alpha) {
+  if (data.length < m) {
+    throw new Error("Number of data points should be greater than or equal to m.");
+  }
+
+  // Initialize the array for the results
+  const results = [];
+
+  // Perform LOESS-like regression on each segment
+  for (let i = Math.floor(m / 2); i < data.length - Math.floor(m / 2); i++) {
+    // Extract the local segment of size 'm'
+    const localSegment = data.slice(i - Math.floor(m / 2), i + Math.floor(m / 2) + 1);
+
+    // Calculate weighted linear regression coefficients (you can use any regression method)
+    let sumX = 0;
+    let sumY = 0;
+    let sumXY = 0;
+    let sumX2 = 0;
+    let weightsSum = 0;
+
+    for (let j = 0; j < localSegment.length; j++) {
+      const weight = Math.exp(-0.5 * Math.pow((j - Math.floor(m / 2)), 2) / alpha); // Gaussian weight
+      sumX += j * weight;
+      sumY += localSegment[j] * weight;
+      sumXY += j * localSegment[j] * weight;
+      sumX2 += j * j * weight;
+      weightsSum += weight;
+    }
+
+    const b = (sumXY - (sumX * sumY) / weightsSum) / (sumX2 - (sumX * sumX) / weightsSum);
+    const a = (sumY - b * sumX) / weightsSum;
+
+    // Store the result for this data point
+    results.push(a + b * (Math.floor(m / 2)));
+  }
+
+  return results;
+}
+
 
 module.exports={
     swapArrayElements:swapArrayElements,
@@ -256,4 +295,5 @@ module.exports={
     fillArrayToRange:fillArrayToRange,
     adjustArrayToRange:adjustArrayToRange,
     signalReducer:signalReducer,
+    loessReducer:loessReducer,
 }

@@ -22,5 +22,23 @@ const n2 = 10
 const reducedData2 = pf.signalReducer(data2,n2)
 
 pf.customConsoleLog(reducedData2)
+
+const data3 = pf.generateBinomialDistribution(100,0.2)
+console.log(data3)
+const n3 = 10
+const reducedData3 = pf.signalReducer(data3,n3)
+
+pf.customConsoleLog(reducedData3)
+
+// Example usage:
+const data4 = [2.5, 3.3, 5.1, 6.7, 8.9, 10.2, 11.8, 12.6, 14.3, 16.7];
+const m = 5; // Local segment size
+const alpha = 0.2; // Smoothing parameter
+const reducedData4 = pf.loessReducer(data4, m, alpha);
+
+pf.customConsoleLog(reducedData4)
+
+const value = pf.smoothAndRemoveNoise(reducedData4,0.5,2)
+pf.customConsoleLog(value); // An array of dimensionality-reduced values
   
 
