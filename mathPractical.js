@@ -81,8 +81,58 @@ function makePercentage(num1,num2){
 }
 
 function parseFormula(str) {
-    return Function(`'use strict'; return (${str})`)()
-  }
+    const operators = ['+', '-', '*', '/', '^', '(', ')'];
+    const precedence = {'+':1, '-':1, '*':2, '/':2, '^':3};
+
+    function applyOperator(operators, values) {
+        const operator = operators.pop();
+        const b = values.pop();
+        const a = values.pop();
+        switch(operator) {
+            case '+': values.push(a + b); break;
+            case '-': values.push(a - b); break;
+            case '*': values.push(a * b); break;
+            case '/': values.push(a / b); break;
+            case '^': values.push(Math.pow(a, b)); break;
+        }
+    }
+
+    function evaluate(expression) {
+        const values = [];
+        const operators = [];
+        let i = 0;
+
+        while (i < expression.length) {
+            const token = expression[i];
+            if (!isNaN(token)) {
+                values.push(parseFloat(token));
+            } else if (token === '(') {
+                operators.push(token);
+            } else if (token === ')') {
+                while (operators[operators.length - 1] !== '(') {
+                    applyOperator(operators, values);
+                }
+                operators.pop();
+            } else if (operators.length === 0 || precedence[token] > precedence[operators[operators.length - 1]]) {
+                operators.push(token);
+            } else {
+                while (operators.length > 0 && precedence[token] <= precedence[operators[operators.length - 1]]) {
+                    applyOperator(operators, values);
+                }
+                operators.push(token);
+            }
+            i++;
+        }
+
+        while (operators.length > 0) {
+            applyOperator(operators, values);
+        }
+
+        return values[0];
+    }
+
+    return evaluate(str.split(/([+\-*/^()])/).filter(token => token.trim() !== ''));
+}
 
   function modifyValues(input, lowerThreshold, upperThreshold) {
     let modified;

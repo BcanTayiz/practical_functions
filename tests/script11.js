@@ -40,5 +40,13 @@ pf.customConsoleLog(reducedData4)
 
 const value = pf.smoothAndRemoveNoise(reducedData4,0.5,2)
 pf.customConsoleLog(value); // An array of dimensionality-reduced values
+
+// Example usage:
+const result = pf.parseFormula('2 * (3 + 4) - 1^2');
+console.log(result); // Output: 13
+
+
+const resultWithoutEval = pf.parseFormula('2 * (3 + 4)^(1/10)');
+console.log(resultWithoutEval); // Output: 2.423
   
 
